@@ -1,4 +1,4 @@
-<!-- This file provides the CONTENT for the MMAP website -->
+<!-- This file provides the CONTENT for the MMAP website  -->
   
   <script type="text/javascript" src="/assets/js_custom/script.js"></script>
   <script type="text/javascript" src="/assets/js_custom/application.js"></script>
