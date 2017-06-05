@@ -1,5 +1,5 @@
 <!-- This file provides the CONTENT for the MMAP website -->
-# MMAP by Jeff O
+# MMAP by Jeff O'Connell
 
 ## MMAP: Mixed Model Analysis for Pedigrees and Populations
 
