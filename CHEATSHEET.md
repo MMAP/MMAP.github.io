@@ -1,3 +1,8 @@
+<!-- This file provides the CONTENT for the MMAP website CHEATSHEET page -->
+# MMAP by Jeff O'Connell
+
+[**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"}
+
 ## MMAP Cheat Sheet compiled by Jim Perry
 
 This Cheat Sheet is designed to facilitate creation of shell scripts for running MMAP.
