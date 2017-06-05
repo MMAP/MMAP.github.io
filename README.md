@@ -368,7 +368,7 @@ To be documented
 
 ### MMAP Cheat Sheet
 
- &nbsp; &nbsp; &nbsp; &nbsp; [Click here for the MMAP Cheat Sheet](https://MMAPportal.github.io/CHEATSHEET){:target="_blank"}   
+ &nbsp; &nbsp; &nbsp; &nbsp; [Click here for the MMAP Cheat Sheet](CHEATSHEET){:target="_blank"}   
  &nbsp;
 
 ---
