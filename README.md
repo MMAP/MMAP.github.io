@@ -1,4 +1,8 @@
 <!-- This file provides the CONTENT for the MMAP website -->
+  
+  <script type="text/javascript" src="/assets/js_custom/script.js"></script>
+  <script type="text/javascript" src="/assets/js_custom/application.js"></script>
+  
 # MMAP by Jeff O'Connell
 
 [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"}
