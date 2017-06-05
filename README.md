@@ -1,8 +1,3 @@
----
-layout: main
-title: MMAPtest
----
-
 <!-- This file provides the CONTENT for the MMAP website -->
 
 ## MMAP: Mixed Model Analysis for Pedigrees and Populations
