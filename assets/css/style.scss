@@ -2328,7 +2328,10 @@ pre { margin-top: 0; margin-bottom: 0; font: 12px "SFMono-Regular", Consolas, "L
 @media (min-width: 1012px) { .hide-xl { display: none !important; } }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); word-wrap: normal; border: 0; }
 
+/*
 .container { width: 980px; margin-right: auto; margin-left: auto; }
+*/
+.container { width: 960px; margin-right: auto; margin-left: auto; }
 .container::before { display: table; content: ""; }
 .container::after { display: table; clear: both; content: ""; }
 
