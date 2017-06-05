@@ -1,3 +1,8 @@
+---
+layout: main
+title: MMAP by Jeff O'Connell
+---
+
 <!-- This file provides the CONTENT for the MMAP website -->
 
 ## MMAP: Mixed Model Analysis for Pedigrees and Populations
