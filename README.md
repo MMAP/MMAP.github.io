@@ -1,8 +1,3 @@
----
-title: "MMAP by Jeff O'Connell"
-description: "MMAP is a comprehensive mixed model program for analysis of pedigree and population data."
----
-
 <!-- This file provides the CONTENT for the MMAP website -->
 # MMAP by Jeff O'Connell
 
