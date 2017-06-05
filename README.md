@@ -1,6 +1,6 @@
 ---
 layout: main
-title: MMAP by Jeff O'Connell
+title: MMAPtest
 ---
 
 <!-- This file provides the CONTENT for the MMAP website -->
