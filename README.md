@@ -1,7 +1,5 @@
-<!-- This file provides the CONTENT for the MMAP website  -->
-  
-  <script type="text/javascript" src="/assets/js_custom/script.js"></script>
-  <script type="text/javascript" src="/assets/js_custom/application.js"></script>
+<!-- This file provides the CONTENT for the MMAP website -->
+<!-- javascript links are at the bottom of this file to improve page loading -->
   
 # MMAP by Jeff O'Connell
 
@@ -381,3 +379,10 @@ To be documented
 ---
 
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
+&nbsp;
+
+<!-- And now for the javascript... -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js_custom/script.js"></script>
+  <script type="text/javascript" src="/assets/js_custom/application.js"></script>
+  
