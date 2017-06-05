@@ -1,3 +1,6 @@
+---
+title: "MMAP Cheat Sheet"
+---
 <!-- This file provides the CONTENT for the MMAP website CHEATSHEET page -->
 # MMAP by Jeff O'Connell
 
@@ -28,7 +31,6 @@ freqcsv=genotypefilename.FREQ.mmap.csv  	# mmap csv allele frequency file
 
 output_root=myfile				#filename root for plink-like file formats (.ped, .map, .info)
 ``` 
-<hr style="clear:both">
 
 <p><a id="subset_genotypes" title="Subset Genotypes" class="toc-item"></a></p>
 
@@ -47,7 +49,7 @@ Creating a marker and/or subject reduced binary genotype file. The outfile is th
 --marker_set <file>		# Extract markers in <file>
 --subject_set <file>		# Extract subjects in <file>
 ```  
-<br style="clear:both">**subject_set files:**  Use one column, no header, with a list of subject id's.   
+**subject_set files:**  Use one column, no header, with a list of subject id's.   
 **marker_set files:**  Use one column, no header, with a list of EITHER SNPNAMEs or RSNUMs.  
  &nbsp; &nbsp; ( The file type for one-column files can be .txt or .csv )
 
