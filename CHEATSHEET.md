@@ -1,6 +1,6 @@
 ---
 title: "MMAP Cheat Sheet"
-description: "MMAP description"
+description: "MMAP is a comprehensive mixed model program for analysis of pedigree and population data."
 ---
 <!-- This file provides the CONTENT for the MMAP website CHEATSHEET page -->
 # MMAP by Jeff O'Connell
