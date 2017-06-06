@@ -5,7 +5,7 @@
   <ol class="toc js-toc"></ol>
 </div>
 
-<p><a id="introduction" title="Introduction" class="toc-item"></a></p>
+<p><a id="home" title="HOME" class="toc-item"></a></p>
 
 # MMAP by Jeff O'Connell
 
