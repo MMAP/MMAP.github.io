@@ -1,8 +1,7 @@
 <!-- This file provides the CONTENT for the MMAP website -->
 <!-- javascript links are at the bottom of this file to improve page loading -->
 
-<article>
-<!--<article class="markdown-body">-->
+<article class="markdown-body">
 
 # MMAP by Jeff O'Connell
 
