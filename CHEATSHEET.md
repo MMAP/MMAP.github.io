@@ -3,9 +3,16 @@ title: "MMAP Cheat Sheet"
 description: "MMAP is a comprehensive mixed model program for analysis of pedigree and population data."
 ---
 <!-- This file provides the CONTENT for the MMAP website CHEATSHEET page -->
+
+<div class="toc-wrapper">
+  <ol class="toc js-toc"></ol>
+</div>
+
+<p><a id="introduction" title="Introduction" class="toc-item"></a></p>
+
 # MMAP by Jeff O'Connell
 
-[**HOME**](https://MMAP.github.io){:target="_blank"} &nbsp; &nbsp; [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; **MMAP Cheat Sheet**
+[**HOME**](https://MMAP.github.io) &nbsp; &nbsp; [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; **MMAP Cheat Sheet**
 
 ## MMAP Cheat Sheet compiled by Jim Perry
 
