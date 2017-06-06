@@ -378,7 +378,7 @@ To be documented
  &nbsp; &nbsp; &nbsp; &nbsp; [Click here for the MMAP Cheat Sheet](/CHEATSHEET.md){:target="_blank"}   
  &nbsp;
 
-</article>
+<\/article>
         
 ---
 
