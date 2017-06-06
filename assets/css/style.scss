@@ -129,6 +129,7 @@ article.full .content-body.full-width {
   padding: 0 0 0 200px;
   /* width: 200px; */
   width: 200px;
+  top: 20px;
 }
 ol.toc {
   /* width: 200px; */
@@ -350,9 +351,6 @@ ol.toc>li {
   font-size: 14px;
   list-style-type: none;
   line-height: 1.4;
-}
-ol.toc.indent1>li {
-  padding: 5px 0px 5px 5px; 
 }
 ol.toc>li a.active {
   font-weight: bold;
