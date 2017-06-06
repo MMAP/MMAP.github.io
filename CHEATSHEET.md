@@ -215,11 +215,11 @@ $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
 
 If some covariates are not in your phenotype file, use one or more additional covariate files.  
 MMAP will look first in the phenotype_filename, then  
- &nbsp; &nbsp; in the covariate_filename list (one or more files) and then  
- &nbsp; &nbsp; in the binary_covariate_filename list (one or more files)  
+ &nbsp; &nbsp; &nbsp; &nbsp; in the covariate_filename list (one or more files) and then  
+ &nbsp; &nbsp; &nbsp; &nbsp; in the binary_covariate_filename list (one or more files)  
 If you want to use SNPs as covariates, add the SNPname in the `--covariates` list and then  
- &nbsp; &nbsp; include the option `--binary_covariate_filename` (list of one or more genotype binary files)  
- &nbsp; &nbsp; A binary covariate file can be the same file used for `--binary_genotype_filename`  
+ &nbsp; &nbsp; &nbsp; &nbsp; include the option `--binary_covariate_filename <list of one or more genotype binary files>`  
+ &nbsp; &nbsp; &nbsp; &nbsp; A binary covariate file can be the same file used for `--binary_genotype_filename`  
 Examples:  
 ```
 covarFile1=/data/jperry/phenotypes/more_covariates.csv  
