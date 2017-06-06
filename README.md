@@ -2,7 +2,7 @@
 <!-- javascript links are at the bottom of this file to improve page loading -->
 
 <div class="toc-wrapper">
-  <ol class="toc js-toc sticky"></ol>
+  <ol class="toc js-toc"></ol>
 </div>
 
 <p><a id="home" title="MMAP Introduction" class="toc-item"></a></p>
