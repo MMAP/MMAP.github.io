@@ -2,7 +2,7 @@
 <!-- javascript links are at the bottom of this file to improve page loading -->
 
 <div class="toc-wrapper">
-  <ol class="toc js-toc"></ol>
+  <ol class="toc js-toc sticky"></ol>
 </div>
 
 <p><a id="home" title="HOME" class="toc-item"></a></p>
