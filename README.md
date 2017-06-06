@@ -8,7 +8,7 @@
 <p><a id="introduction" title="Introduction" class="toc-item"></a></p>
 # MMAP by Jeff O'Connell
 
-[**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; [**Cheat Sheet**](/CHEATSHEET.html){:target="_blank"}
+**HOME** &nbsp; &nbsp; [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; [**MMAP Cheat Sheet**](/CHEATSHEET.html){:target="_blank"}
 
 ## MMAP: Mixed Model Analysis for Pedigrees and Populations
 
