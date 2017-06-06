@@ -1,13 +1,14 @@
 <!-- This file provides the CONTENT for the MMAP website -->
 <!-- javascript links are at the bottom of this file to improve page loading -->
 
-  <div class="toc-wrapper">
-    <ol class="toc js-toc"></ol>
-  </div>
+<div class="toc-wrapper">
+  <ol class="toc js-toc"></ol>
+</div>
 
+<p><a id="introduction" title="Introduction" class="toc-item"></a></p>
 # MMAP by Jeff O'Connell
 
-[**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"}
+[**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; [**Cheat Sheet**](https://github.com/MMAP/CHEATSHEET.md){:target="_blank"}
 
 ## MMAP: Mixed Model Analysis for Pedigrees and Populations
 
@@ -370,16 +371,7 @@ To be documented
 | R script to convert MMAP prepScores output into a skatCohort object | [mmap2seqMeta.R](files/mmap2seqMeta.R) |
 | MMAP scripts and examples for running score tests | [MMAP.score.test.tar.gz](files/MMAP.score.test.tar.gz) |
 | MMAP snpinfo file used in CHARGE exome chip analysis | [<small>SNPInfo_HumanExome_12v1_rev5_AnalysisCols_noDups.tab</small>](files/SNPInfo_HumanExome_12v1_rev5_AnalysisCols_noDups.tab) |
-
-<br>
-
-<p><a id="cheatsheet" title="MMAP Cheat Sheet" class="toc-item"></a></p>
-
-### MMAP Cheat Sheet
-
- &nbsp; &nbsp; &nbsp; &nbsp; [Click here for the MMAP Cheat Sheet](/CHEATSHEET.md){:target="_blank"}   
- &nbsp;
-        
+       
 ---
 
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
