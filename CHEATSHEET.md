@@ -358,16 +358,16 @@ Converts files \<prefix\>.bim, \<prefix\>.bed, \<prefix\>.fam into binary genoty
 
 - **sparse** format (...sparse.bin) is the most highly compressed format.
 
-To convert from "dense" to "bit", use:  
+To convert from "dense" to "bit":  
 `$mmap --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>`
 
-To convert from "bit" to "dense", use:  
+To convert from "bit" to "dense":  
 `$mmap --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>`
 
-To convert from "sparse" to "dense" (dense=byte), use:  
-`$mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>`
+To convert from "sparse" to "dense":  
+`$mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <dense>`
 
-To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )  
+To convert from "sparse" to "bit":  (NOTE: command say "dense", but we add --use_bit_coding )  
 `$mmap  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>`
 
 ---
