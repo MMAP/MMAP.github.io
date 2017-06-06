@@ -188,7 +188,7 @@ This example is similar to that above except MMAP expects the covariates to be p
 
 <p><a id="genotypes_pdf" title=" &nbsp; 1. Genotype Files" class="toc-item"></a></p>
 
-### MMAP Genotype File (from PDF)
+### MMAP Genotype File (same info in PDF)
 
 MMAP has commands to manipulate the binary genotype file.
 To transpose the file from marker-by-subject (MxS) to subject-by-marker (SxM) or subject-bymarker
@@ -220,9 +220,9 @@ Allele frequency calculations.  The allele frequency for each SNP will be in the
 `mmap --write_binary_allele_frequency_file --binary_input_filename <MxS file> --binary_output_filename <filename> --csv_output_filename <filename>`
 
 
-<p><a id="import" title="2. Genotype Import" class="toc-item"></a></p>
+<p><a id="import" title=" &nbsp; 2. Genotype Import" class="toc-item"></a></p>
 
-### MMAP Import Options (from PDF)
+### MMAP Import Options (same info in PDF)
 
 MMAP has commands to import data from Plink, Minimac, IMPUTE2 directly into a binary
 genotype file and commands to export to Mach and Beagle format. Some of these options are
@@ -327,9 +327,9 @@ MMAP.genotype.pdf for details on these options.
 
 Under development
 
-<p><a id="export" title="3. Genotype Export" class="toc-item"></a></p>
+<p><a id="export" title=" &nbsp; 3. Genotype Export" class="toc-item"></a></p>
 
-### MMAP Export Options (from PDF)
+### MMAP Export Options (same info in PDF)
 
 #### Plink
 
