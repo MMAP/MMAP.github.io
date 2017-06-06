@@ -125,16 +125,15 @@ article.full .content-body.full-width {
 
 .toc-wrapper {
   float: right;
-  margin-left: -200px;
-  padding: 0 0 0 200px;
-  /* width: 200px; */
   width: 200px;
+  /* added following 2 lines to place toc on right side of document */
+  margin-left: -200px;   /* prevents interference with document text */
+  padding: 0 0 0 200px;  /* pushes toc to the right */
 }
 ol.toc {
-  /* width: 200px; */
   width: 200px;
   margin: 0;
-  
+  /* added following 2 lines to be "always the same as sticky" */
   position: fixed;
   top: 20px;
 }
