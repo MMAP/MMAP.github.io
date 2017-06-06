@@ -5,7 +5,7 @@
   <ol class="toc js-toc sticky"></ol>
 </div>
 
-<p><a id="home" title="HOME" class="toc-item"></a></p>
+<p><a id="home" title="MMAP HOME" class="toc-item"></a></p>
 
 # MMAP by Jeff O'Connell
 
