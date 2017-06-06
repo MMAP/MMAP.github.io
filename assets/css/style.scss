@@ -134,6 +134,8 @@ ol.toc {
   /* width: 200px; */
   width: 200px;
   margin: 0;
+  
+  position: fixed;
   top: 20px;
 }
 ol.toc.sticky {
