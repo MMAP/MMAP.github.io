@@ -9,7 +9,7 @@ description: "MMAP is a comprehensive mixed model program for analysis of pedigr
   <ol class="toc js-toc"></ol>
 </div>
 
-<p><a id="introduction" title="Introduction" class="toc-item"></a></p>
+<p><a id="cheat_sheet" title="Cheat Sheet HOME" class="toc-item"></a></p>
 
 # MMAP by Jeff O'Connell
 
