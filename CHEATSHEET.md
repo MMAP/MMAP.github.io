@@ -27,7 +27,7 @@ adjust the link definitions, and then copy/paste the desired commands.
 ### Soft Links
 
 ```
-myMMAP=/data/datasets/mmap/mmap			# path to mmap program
+MY_mmap=/data/datasets/mmap/mmap			# path to mmap program
 snps=marker_set.csv				# single column with list of markers (use SNPNAME's or RSNUM's)
 subjects=subject_set.csv			# single column with list of subject id's (EGO numbers)
 
@@ -46,7 +46,7 @@ output_root=myfile				# filename root for plink-like file formats (.ped, .map, .
 ### Subset a genotype file
 
 Creating a marker and/or subject reduced binary genotype file. The outfile is the new binary genotype file.  This command may be applied to MxS binary files (resulting in an MxS output file) or to SxM formats (resulting in SxM output file).  
-`$myMMAP --write_reduced_genotype_binary --binary_input_filename $input_genobin --binary_output_filename $output_genobin [marker and subject options]`
+`$MY_mmap --write_reduced_genotype_binary --binary_input_filename $input_genobin --binary_output_filename $output_genobin [marker and subject options]`
 
 #### subsetting options
 ```
@@ -83,7 +83,7 @@ Genotype files always have SNPNAMEs, so SNPNAMEs are the best bet.
 ### Combine genotype files
 
 If chromosome-specific genotype files are created, they can then be combined into a single MMAP binary.  
-`$myMMAP --combine_binary_genotype_files <file1> <file2> … <fileN>  --binary_output_filename <file>`
+`$MY_mmap --combine_binary_genotype_files <file1> <file2> … <fileN>  --binary_output_filename <file>`
 
 In the above command, the input and output files are MMAP marker-by-subject binary genotype files.  
 RECOMMENDATION: To reduce the size of the combined binary genotype file, once the chromosome specific files are created, run the allele frequency option. The output will contain the minor allele frequency and imputation quality score, which can be used to extract a marker set based on minor allele frequency and/or imputation quality threshold. This marker set can then be used to create reduced binary genotype files before combining to the full file.
@@ -95,7 +95,7 @@ To transpose the file from marker-by-subject (MxS) to subject-by-marker (SxM) or
 MxS format is useful for GWA, computation of LD matrices and allele frequency calculations.  
 SxM format is useful for computation of genetic covariance matrices and haplotype analysis.  
 
-`$myMMAP --transpose_binary_genotype_file --binary_input_filename $genoMxSbin --binary_output_filename $genoSxMbin`
+`$MY_mmap --transpose_binary_genotype_file --binary_input_filename $genoMxSbin --binary_output_filename $genoSxMbin`
 
 ---
 
@@ -104,10 +104,10 @@ SxM format is useful for computation of genetic covariance matrices and haplotyp
 ### Genotype extract as csv file
 
 The infile must be MxS format. The outfile has the results. Marker and Subjects options are valid with this command.  
-`$myMMAP --marker_by_subject_mmap2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
+`$MY_mmap --marker_by_subject_mmap2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
 
 For spare input file use the folloing syntax. Marker_set and (soon subject_set) options are valid.  
-`$myMMAP --sparse2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
+`$MY_mmap --sparse2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
 
 ---
 
@@ -118,14 +118,14 @@ For spare input file use the folloing syntax. Marker_set and (soon subject_set) 
 First create binary allele frequency file, then convert to csv.  
 The allele frequency for each SNP will be in the allele frequency files.
 
-`$myMMAP --write_binary_allele_frequency_file --binary_input_filename $genoMxSbin --binary_output_filename $freqbin`  
-`$myMMAP --allele_freq_binary2csv --binary_input_filename $freqbin --csv_output_filename $freqcsv`
+`$MY_mmap --write_binary_allele_frequency_file --binary_input_filename $genoMxSbin --binary_output_filename $freqbin`  
+`$MY_mmap --allele_freq_binary2csv --binary_input_filename $freqbin --csv_output_filename $freqcsv`
 
 Alternative allele frequency extract from sparse binary:  
-`$myMMAP --mmap_sparse2csv_allele_frequency --binary_input_filename <sparse>  --csv_output_filename <csv> `
+`$MY_mmap --mmap_sparse2csv_allele_frequency --binary_input_filename <sparse>  --csv_output_filename <csv> `
 
 Versions prior to 2017_03_06 used:  
-`$myMMAP --mmap_vcf2csv_allele_frequency (even though input was a sparse file)`
+`$MY_mmap --mmap_vcf2csv_allele_frequency (even though input was a sparse file)`
 
 ---
 
@@ -135,7 +135,7 @@ Versions prior to 2017_03_06 used:
 
 Creates .ped and .info file for input to Haploview program.
 
-`$myMMAP --subject_by_marker_mmap2haploview --binary_input_filename $genoSxMbin --marker_set $snps --haploview_output_filename $output_root`
+`$MY_mmap --subject_by_marker_mmap2haploview --binary_input_filename $genoSxMbin --marker_set $snps --haploview_output_filename $output_root`
 
 OPTION:  `--use_snpname` will use the SNPNAME for the variant id in the haploview dataset (.info file). Default is to use RSNUM for the variant id.
 
@@ -146,7 +146,7 @@ OPTION:  `--use_snpname` will use the SNPNAME for the variant id in the haplovie
 ### Analysis with standard (non-imputed) genotypes ###
 
 ```
-myMMAP=/data/datasets/mmap/mmap
+MY_mmap=/data/datasets/mmap/mmap
 ped=/data/datasets/mmap/amish.pedigree.csv 
 kinbin=/data/datasets/mmap/amish.relationship.bin 
 
@@ -165,7 +165,7 @@ for trait in `cat TRAIT_LIST.txt`; 	# TRAIT_LIST.txt is a one-column file of tra
 					# Note the BACKTICK characters (they are NOT single quotes!)
 do 
 echo "$trait"
-$myMMAP --ped $ped --model add --read_binary_covariance_file $kinbin \
+$MY_mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
   --phenotype_filename $pheno  --binary_genotype_filename $genobin \
   --covariates $covariates  --trait $trait  --file_suffix  $suffix \
   --binary_covariate_filename $genobin \
@@ -183,7 +183,7 @@ exit
 
 ### Example for IMPUTED genotype files
 
-$myMMAP --ped $ped --model add --read_binary_covariance_file $kinbin \
+$MY_mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
   --phenotype_filename $pheno  --binary_genotype_filename $genobin \
   --covariates $covariates  --trait $trait  --file_suffix  $suffix \
   --marker_set $snps \
@@ -289,17 +289,17 @@ examples:
 #### create the MxS.bin gemptu[e file from a .csv file
 
 Use `--num_skip_fields 7` if we do NOT add extra columns for TYPE, GENE, AACHG  
-`$myMMAP  --write_binary_genotype_file --csv_input_filename $genoMxScsv --binary_output_filename $genoMxSbin --num_skip_fields 7`
+`$MY_mmap  --write_binary_genotype_file --csv_input_filename $genoMxScsv --binary_output_filename $genoMxSbin --num_skip_fields 7`
 
 Use `--num_skip_fields 10` if we DO want to add 3 extra columns for TYPE, GENE, AACHG  
-`$myMMAP  --write_binary_genotype_file --csv_input_filename $genoMxScsv --binary_output_filename $genoMxSbin --num_skip_fields 10 --additional_marker_attributes GENE C AACHG C TYPE C`
+`$MY_mmap  --write_binary_genotype_file --csv_input_filename $genoMxScsv --binary_output_filename $genoMxSbin --num_skip_fields 10 --additional_marker_attributes GENE C AACHG C TYPE C`
 
 If the genotype file has the above 3 additional attributes, you must use the option
 shown below (when you run mmap analysis) to have them included in the mmap output files.  
 `--output_marker_attribute TYPE GENE AACHG  --snp_block_size 1`
 
 ### create the SxM.bin file from the MxS.bin file:  
-`$myMMAP --transpose_binary_genotype_file --binary_input_filename $genoMxSbin --binary_output_filename $genoSxMbin`
+`$MY_mmap --transpose_binary_genotype_file --binary_input_filename $genoMxSbin --binary_output_filename $genoSxMbin`
 
 ---
 
@@ -308,18 +308,18 @@ shown below (when you run mmap analysis) to have them included in the mmap outpu
 ### Building plink dataset (.ped & .map)
 
 
-$myMMAP --subject_by_marker_mmap2plink --binary_input_filename $genoSxMbin --plink_output_prefix $output_root
+$MY_mmap --subject_by_marker_mmap2plink --binary_input_filename $genoSxMbin --plink_output_prefix $output_root
 # OPTION: --use_snpname  will use the SNPNAME for the variant id in the plink dataset (.map file)
 #                        Default is to use RSNUM for the variant id
 
-$myMMAP --subject_by_marker_mmap2plink --binary_input_filename <SxM binary genotype file> --plink_output_prefix <prefix>
+$MY_mmap --subject_by_marker_mmap2plink --binary_input_filename <SxM binary genotype file> --plink_output_prefix <prefix>
 #Creates <prefix>.map and <prefix>.ped which can then be converted into Plink binary format with Plink commands.
 #Currently no support of export directly into Plink binary format.
 
-$myMMAP --marker_by_subject_mmap2tped --binary_input_filename <MxS binary genotype file> --plink_output_prefix <prefix>
+$MY_mmap --marker_by_subject_mmap2tped --binary_input_filename <MxS binary genotype file> --plink_output_prefix <prefix>
 #Creates <prefix>.fam, <prefix>.bim and <prefix>.tped
 
-$myMMAP --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binary genotype file> --plink_output_filename <prefix>
+$MY_mmap --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binary genotype file> --plink_output_filename <prefix>
 #NOTE: output option may change in future to be --plink_output_prefix
 #Creates <prefix>.fam, <prefix>.map and <prefix>.ped
 #   The .ped file is actually a "dosage" file  ( file type may change to ".dose" in the future )
@@ -336,7 +336,7 @@ $myMMAP --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binar
 ### Convert from Plink to MMAP 
 
 # convert from plink binary to mmap binary (assuming MxS in the Plink file):
-$myMMAP --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS
+$MY_mmap --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS
 # By default, MMAP will set Plink A1 to the NON_CODED_ALLELE and A2 to the EFFECT_ALLELE
 # However, Plink (by default) sets A1 to the allele with the lower allele frequency.
 # If you want the resulting MMAP file to have the Plink A1 allele in MMAP's EFFECT_ALLELE,
@@ -344,7 +344,7 @@ $myMMAP --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binar
 #                              and Plink A2 to the mmap "NON_CODED_ALLELE"
 
 # MMAP imports Plink binary format files into an SxM or MxS genotype binary file, depending on the Plink format, which is automatically detected.
-$myMMAP --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap prefix>
+$MY_mmap --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap prefix>
 #Converts files <prefix>.bim, <prefix>.bed, <prefix>.fam into binary genotype file <mmap prefix>.bin and MMAP pedigree <mmap prefix>.ped.csv extracted from the <prefix>.fam.
 
 ---
@@ -358,10 +358,10 @@ $myMMAP --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap
 # used and MMAP determines the binary_type (user does not need to specify).
 
 # To convert from "bit" to "dense", use:
-$myMMAP --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>
+$MY_mmap --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>
 
 # To convert from "dense" to "bit", use:
-$myMMAP --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>
+$MY_mmap --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>
 
 ---
 
@@ -378,10 +378,10 @@ $myMMAP --binary_genotype_file_dense2bit --binary_input_filename <dense> --binar
 --vcf2mmap_binary_genotype_file --use_chr_pos_alt_ref --vcf_input_filename <vcf> --binary_output_filename <sparse>
 
 # To convert from "sparse" to "dense" (dense=byte), use:
-$myMMAP --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>
+$MY_mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>
 
 # To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )
-$myMMAP  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>
+$MY_mmap  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>
 
 ---
 
@@ -389,7 +389,7 @@ $myMMAP  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_fil
 
 ### Transformations of Phenotypes 
 
-$myMMAP --ped $ped --read_binary_covariance_file $kinbin --phenotype_filename $pheno --trait $trait --all_output --covariates $covariates   --file_suffix $suff --subject_set $subject_set --transform_analysis_phenotype --binary_genotype_filename $genomxs
+$MY_mmap --ped $ped --read_binary_covariance_file $kinbin --phenotype_filename $pheno --trait $trait --all_output --covariates $covariates   --file_suffix $suff --subject_set $subject_set --transform_analysis_phenotype --binary_genotype_filename $genomxs
 
 Takes full set of options. Exits once the file is created. NO adjustment for pedigree, which is standard. File contains all data in the model, similar to poly.model file
 
