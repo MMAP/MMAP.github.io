@@ -186,7 +186,7 @@ This example is similar to that above except MMAP expects the covariates to be p
 | Pedigree and Environmental Covariance Matrices | [MMAP.covariance.matrix.pdf](files/MMAP.covariance.matrix.pdf){:target="_blank"} |
 | GxG, GxE, ExE Interaction Analysis and Sandwich Estimators | [MMAP.interaction.pdf](files/MMAP.interaction.pdf){:target="_blank"} |
 
-<p><a id="genotypes_pdf" title="1. Genotype Files" class="toc-item"></a></p>
+<p><a id="genotypes_pdf" title="1. Genotype Files" class="toc-item indent1"></a></p>
 
 ### MMAP Genotype File (from PDF)
 
