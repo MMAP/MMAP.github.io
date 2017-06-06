@@ -333,54 +333,55 @@ Example plink command to read files created by MMAP and create another (equivale
 
 ### Convert from Plink to MMAP 
 
-Cconvert from plink binary to mmap binary (assuming MxS in the Plink file):  
+Convert from Plink binary to MMAP binary (assuming MxS in the Plink file):  
 `$mmap --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS`  
 By default, MMAP will set Plink A1 to the NON_CODED_ALLELE and A2 to the EFFECT_ALLELE  
 However, Plink (by default) sets A1 to the allele with the lower allele frequency.  
 If you want the resulting MMAP file to have the Plink A1 allele in MMAP's EFFECT_ALLELE,  
-use: `--swap_A1_A2` which will set  
- \- Plink A1 to the mmap "EFFECT_ALLELE" and  
- \- Plink A2 to the mmap "NON_CODED_ALLELE"
+use: `--swap_A1_A2` which will use  
+ - Plink A1 for the MMAP binary "EFFECT_ALLELE" and  
+ - Plink A2 for the  "NON_CODED_ALLELE"
 
-# MMAP imports Plink binary format files into an SxM or MxS genotype binary file, depending on the Plink format, which is automatically detected.
-$mmap --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap prefix>
-#Converts files <prefix>.bim, <prefix>.bed, <prefix>.fam into binary genotype file <mmap prefix>.bin and MMAP pedigree <mmap prefix>.ped.csv extracted from the <prefix>.fam.
+MMAP imports Plink binary format files into an SxM or MxS genotype binary file, depending on the Plink format, which is automatically detected.  
+`$mmap --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap prefix>`  
+Converts files \<prefix\>.bim, \<prefix\>.bed, \<prefix\>.fam into binary genotype file \<mmap prefix\>.bin and MMAP pedigree \<mmap prefix\>.ped.csv extracted from the \<prefix\>.fam.
 
 ---
 
 <p><a id="mmap_formats" title="MMAP binary formats" class="toc-item"></a></p>
 
-### Convert between binary formats 
+### Convert between MMAP binary formats 
 
-# "bit" format (typically ...bit.bin) is 1/4th the size of a "dense" binary (...bin)
-# when a binary_input_filename is required, both "bit" and "dense" formats can be
-# used and MMAP determines the binary_type (user does not need to specify).
+**dense** is the original MMAP binary format with file type ...bin
 
-# To convert from "bit" to "dense", use:
-$mmap --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>
+**bit** format (...bit.bin) is 1/4th the size of a "dense" binary (...bin) when a binary_input_filename is required, both "bit" and "dense" formats can be used and MMAP determines the binary_type (user does not need to specify).
 
-# To convert from "dense" to "bit", use:
-$mmap --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>
+**sparse** format (...sparse.bin) is the most highly compressed format.
+
+#### To convert from "dense" to "bit", use:  
+`$mmap --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>`
+
+#### To convert from "bit" to "dense", use:  
+`$mmap --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>`
+
+#### To convert from "sparse" to "dense" (dense=byte), use:  
+`$mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>`
+
+#### To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )  
+`$mmap  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>`
 
 ---
 
 <p><a id="grm_eigenvectors" title="GRM & Eigenvectors" class="toc-item"></a></p>
 
-### Genomic Relationship Matrices and Eigen Vector files 
+### Genomic Relationship Matrices and Eigenvector files 
 
-#The eigen.bin file only depends on the subjects in the file. It is independent of trait and covariates. I created them by trait as each trait has different number of subjects. You can add any covariate as long as there is no missing data for those subjects.
+The eigen.bin file only depends on the subjects in the file. It is independent of trait and covariates. Create them by trait as each trait typicallly has a different number of subjects. You can add any covariate to the model as long as there is no missing data for the subjects used to create the eigenvector file.
 
-######################################
---include_duplicate_markers  # use with --write_reduced_genotype_binary and --marker_by_subject_mmap2csv to insure you get all desired markers when there are duplicate markers with SAME SNPNAME are in the genotype file.
+`--include_duplicate_markers`  Use this option with `--write_reduced_genotype_binary` and `--marker_by_subject_mmap2csv` to insure you get all desired markers when there are duplicate markers with SAME SNPNAME are in the genotype file.
 
-##### to create a "sparse" formated binary from vcf AND force SNPNAME to be chr:pos:ref:alt
---vcf2mmap_binary_genotype_file --use_chr_pos_alt_ref --vcf_input_filename <vcf> --binary_output_filename <sparse>
-
-# To convert from "sparse" to "dense" (dense=byte), use:
-$mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>
-
-# To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )
-$mmap  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>
+##### Create a "sparse" formated binary from vcf AND force SNPNAME to be chr:pos:ref:alt
+`--vcf2mmap_binary_genotype_file --use_chr_pos_alt_ref --vcf_input_filename <vcf> --binary_output_filename <sparse>`
 
 ---
 
