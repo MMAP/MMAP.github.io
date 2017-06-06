@@ -352,22 +352,22 @@ Converts files \<prefix\>.bim, \<prefix\>.bed, \<prefix\>.fam into binary genoty
 
 ### Convert between MMAP binary formats 
 
-**dense** is the original MMAP binary format with file type ...bin
+- **dense** is the original MMAP binary format with file type ...bin
 
-**bit** format (...bit.bin) is 1/4th the size of a "dense" binary (...bin) when a binary_input_filename is required, both "bit" and "dense" formats can be used and MMAP determines the binary_type (user does not need to specify).
+- **bit** format (...bit.bin) is 1/4th the size of a "dense" binary (...bin) when a binary_input_filename is required, both "bit" and "dense" formats can be used and MMAP determines the binary_type (user does not need to specify).
 
-**sparse** format (...sparse.bin) is the most highly compressed format.
+- **sparse** format (...sparse.bin) is the most highly compressed format.
 
-#### To convert from "dense" to "bit", use:  
+To convert from "dense" to "bit", use:  
 `$mmap --binary_genotype_file_dense2bit --binary_input_filename <dense> --binary_output_filename <bit>`
 
-#### To convert from "bit" to "dense", use:  
+To convert from "bit" to "dense", use:  
 `$mmap --binary_genotype_file_bit2dense --binary_input_filename <bit> --binary_output_filename <dense>`
 
-#### To convert from "sparse" to "dense" (dense=byte), use:  
+To convert from "sparse" to "dense" (dense=byte), use:  
 `$mmap --binary_genotype_file_sparse2dense --binary_input_filename <sparse> --binary_output_filename <byte>`
 
-#### To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )  
+To convert from "sparse" to "bit", use:  (NOTE: command say "dense", but we add --use_bit_coding )  
 `$mmap  --binary_genotype_file_sparse2dense --use_bit_coding --binary_input_filename <sparse> --binary_output_filename <bit>`
 
 ---
