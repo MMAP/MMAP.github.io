@@ -19,10 +19,10 @@ description: "MMAP is a comprehensive mixed model program for analysis of pedigr
 
 This Cheat Sheet is designed to facilitate creation of shell scripts for running MMAP.
 
-The first section defines soft links for files and the commands in subsequent sections
-give examples of various MMAP options with one or more of these soft links.
-Thus, you can download this file, adjust the link definitions in the first section
-and then copy/paste the MMAP commands to preform the various functions.
+Example soft links for the MMAP program plus input and output files are shown below.
+Example commands and options of various MMAP options, usingh one or more of these soft links,
+are given in the subsequent sections.  Thus, you can copy the softlinks into a shell scripthus,
+adjust the link definitions, and then copy/paste the desired MMAP commands to preform the various functions.
 
 ### Soft Links
 
@@ -406,5 +406,4 @@ If the analysis plan calls for inverse normal of the covariate adjusted residual
 
 <!-- And now for the javascript... -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/assets/js_custom/script.js"></script>
   <script type="text/javascript" src="/assets/js_custom/application.js"></script>
