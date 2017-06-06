@@ -189,6 +189,7 @@ exit
 
 ### Example for IMPUTED genotype files
 
+```
 $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
   --phenotype_filename $pheno  --binary_genotype_filename $genobin \
   --covariates $covariates  --trait $trait  --file_suffix  $suffix \
@@ -200,12 +201,11 @@ $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
   --min_dosage 0.02 \               <== for imputation genotype files (equiv. to --min_minor_allele_frequency)
   --all_output \
   >> $stdoutfile
-  
-* NOTE on `--min_dosage` and `--min_minor_allele_frequency`   The "ideal" is to apply the limit based on the frequency for the subject population actually included in a model run.  However, this may use the frequency for all subjects in the genotype file.  Jeff is checking on this issue.
-  
-* OTHER options for Imputation analysis (these are not usually necessary)
+```
+* NOTE on `--min_dosage` and `--min_minor_allele_frequency` :  The "ideal" is to apply the limit based on the frequency for the subject population actually included in a model run.  However, this may use the frequency for all subjects in the genotype file.
+* OTHER options for Imputation analysis (these are not usually necessary)  
    `--max_h2 0.98                 <== sets limit on h2 (if h2 goes to 1.0 we will get funny pValues)`
-    `--snp_block_size 5000 \	  <== may not be needed (check with Jeff)`
+   `--snp_block_size 5000 \	  <== may not be needed (check with Jeff)`
     
  ---
 
