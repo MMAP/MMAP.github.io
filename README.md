@@ -1,8 +1,6 @@
 <!-- This file provides the CONTENT for the MMAP website -->
 <!-- javascript links are at the bottom of this file to improve page loading -->
 
-<article class="markdown-body">
-
 # MMAP by Jeff O'Connell
 
 [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"}
@@ -382,8 +380,6 @@ To be documented
 
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
 &nbsp;
-
-</article>
 
 <!-- And now for the javascript... -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
