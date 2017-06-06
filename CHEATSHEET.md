@@ -41,7 +41,7 @@ freqcsv=genotypefilename.FREQ.mmap.csv  	# mmap csv allele frequency file
 output_root=myfile				# filename root for plink-like file formats (.ped, .map, .info)
 ``` 
 
-<p><a id="subset_genotypes" title="Subset Genotypes" class="toc-item"></a></p>
+<p><a id="subset_genotypes" title="Subset genotypes" class="toc-item"></a></p>
 
 ### Subset a genotype file
 
@@ -82,7 +82,7 @@ Genotype files always have SNPNAMEs, so SNPNAMEs are the best bet.
 
 ---
 
-<p><a id="combine_genotypes" title="Combine Genotypes" class="toc-item"></a></p>
+<p><a id="combine_genotypes" title="Combine genotypes" class="toc-item"></a></p>
 
 ### Combine genotype files
 
@@ -103,7 +103,7 @@ SxM format is useful for computation of genetic covariance matrices and haplotyp
 
 ---
 
-<p><a id="extract_genotypes" title="Extract Genotypes" class="toc-item"></a></p>
+<p><a id="extract_genotypes" title="Extract genotypes" class="toc-item"></a></p>
 
 ### Genotype extract as csv file
 
@@ -117,7 +117,7 @@ For spare input file use the folloing syntax. Marker_set and (soon subject_set) 
 
 ---
 
-<p><a id="extract_freq" title="Extract Frequencies" class="toc-item"></a></p>
+<p><a id="extract_freq" title="Extract allele freq" class="toc-item"></a></p>
 
 ### Allele frequency extract
 
@@ -147,7 +147,7 @@ OPTION:  `--use_snpname` will use the SNPNAME for the variant id in the haplovie
 
 ---
 
-<p><a id="analysis_standard" title="Analysis Example" class="toc-item"></a></p>
+<p><a id="analysis_standard" title="Analysis example" class="toc-item"></a></p>
 
 ### Analysis with standard (non-imputed) genotypes ###
 
@@ -185,7 +185,7 @@ exit
 
 ---
 
-<p><a id="analysis_example_2" title="Analysis Example 2" class="toc-item"></a></p>
+<p><a id="analysis_example_2" title="Analysis - imputed files" class="toc-item"></a></p>
 
 ### Example for IMPUTED genotype files
 
@@ -209,57 +209,76 @@ $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
     
  ---
 
-<p><a id="additional_optionss" title="Additional Options" class="toc-item"></a></p>
+<p><a id="additional_optionss" title="Additional options" class="toc-item"></a></p>
 
 ### Additional Options
 
-If some covariates are not in your phenotype file, use one or more additional covariate files.
-MMAP will look first in the phenotype_filename, then
-    in the covariate_filename list (one or more files) and then
-    in the binary_covariate_filename list (one or more files)
-If you want to use SNPs as covariates, add the SNPname in the --covariates list and then
-    include the option --binary_covariate_filename <list of one or more genotype binary files>
-    A binary covariate file can be the same file used for --binary_genotype_filename
-Examples:
-covarFile1=/data/jperry/phenotypes/more_covariates.csv
-covarFile2=/data/jperry/phenotypes/other_covariates.csv
+If some covariates are not in your phenotype file, use one or more additional covariate files.  
+MMAP will look first in the phenotype_filename, then  
+ &nbsp; &nbsp; in the covariate_filename list (one or more files) and then  
+ &nbsp; &nbsp; in the binary_covariate_filename list (one or more files)  
+If you want to use SNPs as covariates, add the SNPname in the `--covariates` list and then  
+ &nbsp; &nbsp; include the option `--binary_covariate_filename` (list of one or more genotype binary files)  
+ &nbsp; &nbsp; A binary covariate file can be the same file used for `--binary_genotype_filename`  
+Examples:  
+```
+covarFile1=/data/jperry/phenotypes/more_covariates.csv  
+covarFile2=/data/jperry/phenotypes/other_covariates.csv  
 
-  --covariate_filename $covarFile1 $covarFile2 \
-
-  --binary_covariate_filename $genobin \
-  
+--covariate_filename $covarFile1 $covarFile2
+--binary_covariate_filename $genobin
+```
 The subject ids are expected to be in the first column of the phenotype_filename and covariate_filename files
 If this condition is met, then the column header for the subject ids does not need to be specified.
 If the subject ids are not in the first column, you may specify the column header as shown below
 When specified, the column header must be used in phenotype_filename AND IN ALL covariate_filename files.
 
-  --phenotype_id EGO \   # column header for subject ids in phenotype_filename and covariate_filename files.
+`--phenotype_id EGO`   # column header for subject ids in phenotype_filename and covariate_filename files.
   
+---
 
-Gene x Environment interactions (actually, SNP x covariate interaction)
-This option is valid ONLY if you are using a --binary-genotype-filename such that mmap is
+<p><a id="gxe" title="GxE interactions" class="toc-item"></a></p>
+
+### Gene x Environment Interactions
+
+Gene x Environment interactions (actually, SNP x covariate interaction) are available with MMAP.
+This option is valid ONLY if you are using a `--binary-genotype-filename` such that MMAP is
 looping over a list of SNPs (the SNPs in the genotype file subsetted by the optional marker_set)
 This option creates an additional covariate which is: SNP*covariate (SNP*BMI in example) where
 SNP is the SNP from the list of SNPs being looped over.
+
 The covariate can be any item in the phenotype file or in a covariate file or a SNP from a binary covariate file.
-This item does NOT have to be in the covariate list identified with --covariates (but typically would be)
-  --gxe_interaction TREATMENT  \    ( gives additional covariate: SNP*TREATMENT )
-NOTE: There can be only one gxe term in the model.
-       Typically, you would have TREATMENT in the list of covariates in addition to the --gxe_interaction term
- 
-You may also specify interactions with the --interactions option
-The items do NOT have to be in the covariate list identified with --covariates (but typically would be)
+This item does NOT have to be in the covariate list identified with `--covariates` (but typically would be)
+
+```
+--gxe_interaction TREATMENT`  (gives additional covariate: SNP*TREATMENT)
+```
+
+NOTE: There can be only one GxE term in the model. Typically, you would have TREATMENT in the list of
+covariates in addition to the --gxe_interaction term
+
+---
+
+<p><a id="covariate_interactions" title="Covariate interactions" class="toc-item"></a></p>
+
+### Covariate x Covariate Interactions
+
+You may also specify covariate x convariate interactions with the `--interactions` option.
+The items do NOT have to be in the covariate list identified with `--covariates` (but typically would be)
 The covariate can be any item in the phenotype file or in a covariate file or a SNP from a binary covariate file.
-  --interactions age*sex age*sex*BMI \  (gives 2 additional covariates: age*sex  age*sex*BMI)
-  --interactions age*rs123456 \         (gives additional covariate: age*rs123456 where rs123456 is a specific SNP)
-									    (rs123456 could be in the pheno file or a covarFile or it can be in a
-										 binary_covariate_filename which might be the same as the
-										 binary_genotype_filename or could be a different binary file)
-  
+```
+--interactions age*sex age*sex*BMI	gives 2 additional covariates: age*sex  age*sex*BMI
+--interactions age*rs123456     	gives additional covariate: age*rs123456 where rs123456 is a specific SNP
+					rs123456 could be in the pheno file or a covarFile or it can be in a
+					binary_covariate_filename which might be the same as the
+					binary_genotype_filename or could be a different binary file
+```  
 If you wanted to do every possible combination of 4 covariates (singles, doubles, triples, quadruples)
-specify them as shown below.  If you didn't need the singles, you could leave out the --covariates option
-  --covariates age sex BMI rs123  
-  --interactions  age*sex age*BMI age*rs123 sex*BMI sex*rs123 BMI*rs123  age*sex*BMI age*BMI*rs123 sex*BMI*rs123  age*sex*BMI*rs123
+specify them as shown below.  If you didn't need the singles, you could leave out the `--covariates` option.
+```
+--covariates age sex BMI rs123  
+--interactions  age*sex age*BMI age*rs123 sex*BMI sex*rs123 BMI*rs123  age*sex*BMI age*BMI*rs123 sex*BMI*rs123  age*sex*BMI*rs123
+```
 
 ---
 
@@ -288,7 +307,7 @@ examples:
 
 ---
 
-<p><a id="building_genotype_files" title="Building Genotype Files" class="toc-item"></a></p>
+<p><a id="building_genotype_files" title="Building genotype files" class="toc-item"></a></p>
 
 ### Building binary genotype files
 
@@ -314,7 +333,7 @@ shown below (when you run mmap analysis) to have them included in the mmap outpu
 
 <p><a id="mmap_formats" title="MMAP binary formats" class="toc-item"></a></p>
 
-### Convert between MMAP binary formats 
+### MMAP binary formats 
 
 - **dense** is the original MMAP binary format with file type ...bin
 
@@ -338,7 +357,7 @@ To convert from "sparse" to "bit":  (NOTE: command say "dense", but we add --use
 
 <p><a id="plink_to_mmap" title="Plink to MMAP" class="toc-item"></a></p>
 
-### Convert from Plink to MMAP 
+### Plink to MMAP binary
 
 Convert from Plink binary to MMAP binary (assuming MxS in the Plink file):  
 `$mmap --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS`  
@@ -355,9 +374,9 @@ Converts files \<prefix\>.bim, \<prefix\>.bed, \<prefix\>.fam into binary genoty
 
 ---
 
-<p><a id="plink_datasets" title="Plink Datasets" class="toc-item"></a></p>
+<p><a id="plink_datasets" title="MMAP to Plink" class="toc-item"></a></p>
 
-### Building plink dataset (.ped & .map)
+### MMAP to Plink datasets (.ped & .map)
 
 `$mmap --subject_by_marker_mmap2plink --binary_input_filename $genoSxMbin --plink_output_prefix $output_root`  
 OPTION: `--use_snpname`  will use the SNPNAME for the variant id in the plink dataset (.map file).  Default is to use RSNUM for the variant id.
@@ -385,8 +404,9 @@ Example plink command to read files created by MMAP and create another (equivale
 
 ### Genomic Relationship Matrices and Eigenvector files 
 
-The eigen.bin file only depends on the subjects in the file. It is independent of trait and covariates. Create them by trait as each trait typicallly has a different number of subjects. You can add any covariate to the model as long as there is no missing data for the subjects used to create the eigenvector file.
+Eigenvector files - (to be updated soon) The eigen.bin file only depends on the subjects in the file. It is independent of trait and covariates. Create them by trait as each trait typicallly has a different number of subjects. You can add any covariate to the model as long as there is no missing data for the subjects used to create the eigenvector file.
 
+Genomic Relationship Matrix - (to be added soon)
 
 ---
 
