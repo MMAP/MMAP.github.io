@@ -307,27 +307,25 @@ shown below (when you run mmap analysis) to have them included in the mmap outpu
 
 ### Building plink dataset (.ped & .map)
 
+`$mmap --subject_by_marker_mmap2plink --binary_input_filename $genoSxMbin --plink_output_prefix $output_root`  
+OPTION: `--use_snpname`  will use the SNPNAME for the variant id in the plink dataset (.map file).  Default is to use RSNUM for the variant id.
 
-$mmap --subject_by_marker_mmap2plink --binary_input_filename $genoSxMbin --plink_output_prefix $output_root
-# OPTION: --use_snpname  will use the SNPNAME for the variant id in the plink dataset (.map file)
-#                        Default is to use RSNUM for the variant id
+`$mmap --subject_by_marker_mmap2plink --binary_input_filename <SxM binary genotype file> --plink_output_prefix <prefix>`  
+Creates \<prefix\>.map and \<prefix\>.ped which can then be converted into Plink binary format with Plink commands.
+Currently no support of export directly into Plink binary format.
 
-$mmap --subject_by_marker_mmap2plink --binary_input_filename <SxM binary genotype file> --plink_output_prefix <prefix>
-#Creates <prefix>.map and <prefix>.ped which can then be converted into Plink binary format with Plink commands.
-#Currently no support of export directly into Plink binary format.
+`$mmap --marker_by_subject_mmap2tped --binary_input_filename <MxS binary genotype file> --plink_output_prefix <prefix>`  
+Creates \<prefix\>.fam, \<prefix\>.bim and \<prefix\>.tped
 
-$mmap --marker_by_subject_mmap2tped --binary_input_filename <MxS binary genotype file> --plink_output_prefix <prefix>
-#Creates <prefix>.fam, <prefix>.bim and <prefix>.tped
-
-$mmap --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binary genotype file> --plink_output_filename <prefix>
-#NOTE: output option may change in future to be --plink_output_prefix
-#Creates <prefix>.fam, <prefix>.map and <prefix>.ped
-#   The .ped file is actually a "dosage" file  ( file type may change to ".dose" in the future )
-#   Use this option to convert an MMAP inputation binary to a plink "dosage" dataset
-# NOTE: the dosage file created by this MMAP option is "format=1"
-# See http://pngu.mgh.harvard.edu/~purcell/plink/dosage.shtml
-# Example that reads the files from MMAP and simply creates another (equivalent) dosage file.
-#   plink --dosage $prefix.dose format=1 --fam $prefix.fam --map $prefix.map --write-dosage --out newOut
+`$mmap --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binary genotype file> --plink_output_filename <prefix>`  
+NOTE: output option may change in future to be `--plink_output_prefix`  
+Creates \<prefix\>.fam, \<prefix\>.map and \<prefix\>.ped  
+ - The .ped file is actually a "dosage" file  ( file type may change to ".dose" in the future )  
+ - Use this option to convert an MMAP inputation binary to a plink "dosage" dataset  
+NOTE: the dosage file created by this MMAP option is "format=1"  
+See http://pngu.mgh.harvard.edu/~purcell/plink/dosage.shtml  
+Example plink command to read files created by MMAP and create another (equivalent) dosage file.
+`plink --dosage $prefix.dose format=1 --fam $prefix.fam --map $prefix.map --write-dosage --out newOut`
 
 ---
 
@@ -335,13 +333,14 @@ $mmap --marker_by_subject_mmap2plink_dosage --binary_input_filename <MxS binary 
 
 ### Convert from Plink to MMAP 
 
-# convert from plink binary to mmap binary (assuming MxS in the Plink file):
-$mmap --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS
-# By default, MMAP will set Plink A1 to the NON_CODED_ALLELE and A2 to the EFFECT_ALLELE
-# However, Plink (by default) sets A1 to the allele with the lower allele frequency.
-# If you want the resulting MMAP file to have the Plink A1 allele in MMAP's EFFECT_ALLELE,
-# use: --swap_A1_A2 which will set Plink A1 to the mmap "EFFECT_ALLELE"
-#                              and Plink A2 to the mmap "NON_CODED_ALLELE"
+Cconvert from plink binary to mmap binary (assuming MxS in the Plink file):  
+`$mmap --plink_bfile2mmap --swap_A1_A2 --plink_bfile $plinkBinaryFormat --binary_output_prefix $mmapFormat.MxS`  
+By default, MMAP will set Plink A1 to the NON_CODED_ALLELE and A2 to the EFFECT_ALLELE  
+However, Plink (by default) sets A1 to the allele with the lower allele frequency.  
+If you want the resulting MMAP file to have the Plink A1 allele in MMAP's EFFECT_ALLELE,  
+use: `--swap_A1_A2` which will set  
+ \- Plink A1 to the mmap "EFFECT_ALLELE" and  
+ \- Plink A2 to the mmap "NON_CODED_ALLELE"
 
 # MMAP imports Plink binary format files into an SxM or MxS genotype binary file, depending on the Plink format, which is automatically detected.
 $mmap --plink_bfile2mmap -–plink_bfile <prefix> --binary_output_prefix <mmap prefix>
