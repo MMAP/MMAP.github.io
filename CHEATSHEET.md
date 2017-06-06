@@ -58,9 +58,9 @@ Creating a marker and/or subject reduced binary genotype file. The outfile is th
 --marker_set <file>		# Extract markers in <file>
 --subject_set <file>		# Extract subjects in <file>
 
---include_duplicate_markers`	# Use this option with `--write_reduced_genotype_binary` and `--marker_by_subject_mmap2csv`
-				  to insure you get all desired markers when there are duplicate markers with SAME SNPNAME
-				  are in the genotype file.
+--include_duplicate_markers  # Use this option with --write_reduced_genotype_binary and --marker_by_subject_mmap2csv
+			       to insure you get all desired markers when there are duplicate markers with the 
+			       same SNPNAME are in the genotype file.
 ```  
 **subject_set files:**  Use one column, no header, with a list of subject id's.   
 **marker_set files:**  Use one column, no header, with a list of EITHER SNPNAMEs or RSNUMs.  
