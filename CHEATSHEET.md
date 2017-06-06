@@ -20,9 +20,9 @@ description: "MMAP is a comprehensive mixed model program for analysis of pedigr
 This Cheat Sheet is designed to facilitate creation of shell scripts for running MMAP.
 
 Example soft links for the MMAP program plus input and output files are shown below.
-Example commands and options of various MMAP options, usingh one or more of these soft links,
-are given in the subsequent sections.  Thus, you can copy the softlinks into a shell scripthus,
-adjust the link definitions, and then copy/paste the desired MMAP commands to preform the various functions.
+Example commands and options using these soft links are given in subsequent sections.
+Thus, you can copy the softlinks into a shell script,
+adjust the link definitions, and then copy/paste the desired commands.
 
 ### Soft Links
 
