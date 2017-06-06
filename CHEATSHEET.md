@@ -38,7 +38,7 @@ genoMxScsv=genotypefilename.MxS.csv		# mmap csv genotype file with Marker x Subj
 freqbin=genotypefilename.FREQ.mmap.bin  	# mmap binary allele frequency file
 freqcsv=genotypefilename.FREQ.mmap.csv  	# mmap csv allele frequency file
 
-output_root=myfile				#filename root for plink-like file formats (.ped, .map, .info)
+output_root=myfile				# filename root for plink-like file formats (.ped, .map, .info)
 ``` 
 
 <p><a id="subset_genotypes" title="Subset Genotypes" class="toc-item"></a></p>
