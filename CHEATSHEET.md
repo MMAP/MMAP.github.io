@@ -3,6 +3,7 @@ title: "MMAP Cheat Sheet"
 description: "MMAP is a comprehensive mixed model program for analysis of pedigree and population data."
 ---
 <!-- This file provides the CONTENT for the MMAP website CHEATSHEET page -->
+<!-- javascript links are at the bottom of this file to improve page loading -->
 
 <div class="toc-wrapper">
   <ol class="toc js-toc"></ol>
@@ -398,11 +399,12 @@ Squared off means the data is not missing at any inputs in the model, be it pedi
 
 If the analysis plan calls for inverse normal of the covariate adjusted residuals, you would need 3 steps. Run the linear regression to generate the residuals, then transform the residuals with no covariates, then run mixed model.
 
-
-<p><a id="" title="MMAP Home Page" class="toc-item"></a></p>
-
-<br>
-
 ---
 
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
+&nbsp;
+
+<!-- And now for the javascript... -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js_custom/script.js"></script>
+  <script type="text/javascript" src="/assets/js_custom/application.js"></script>
