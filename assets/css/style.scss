@@ -125,7 +125,8 @@ article.full .content-body.full-width {
 
 .toc-wrapper {
   float: right;
-  margin-left: 200px;
+  margin-left: -200px;
+  padding: 0 0 0 200px;
   /* width: 200px; */
   width: 200px;
 }
