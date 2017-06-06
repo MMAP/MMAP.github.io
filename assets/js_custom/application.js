@@ -1,6 +1,6 @@
 $(function(){
 
-  // Initalize the ToC if we're on an article page
+  // Initalize the ToC if we're on an article page (article section not actuall required here)
   if ($('.js-toc').length) {
     tableOfContents($('.js-toc'));
 
