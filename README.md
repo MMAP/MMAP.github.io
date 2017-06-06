@@ -377,13 +377,13 @@ To be documented
 
  &nbsp; &nbsp; &nbsp; &nbsp; [Click here for the MMAP Cheat Sheet](/CHEATSHEET.md){:target="_blank"}   
  &nbsp;
-
-\<\/article\>
         
 ---
 
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
 &nbsp;
+
+</article>
 
 <!-- And now for the javascript... -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
