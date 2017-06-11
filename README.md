@@ -389,6 +389,7 @@ pooled_variance option. The pooled variance uses all the markers.
 
 #### KING genomic matrices
 Adding the option `-–king_homo` will generate the genomic covariance matrix based on Equation 5 in ref [1].  
+![alt text](images/King_Equation.gif "Equation 5")
 KING robust covariance matrices are being implemented.
 
 ```
