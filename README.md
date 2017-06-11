@@ -931,7 +931,7 @@ Sandwich package: [http://cran.r-project.org/web/packages/sandwich/index.html](h
 
 <p><a id="score_tests" title="Score Tests" class="toc-item"></a></p>
 
-### Score Tests
+### Score Tests / SKAT
 
 | Score&nbsp;Tests&nbsp;(including&nbsp;SKAT)&nbsp;&nbsp;&nbsp; | Documentation file |
 |---|---|
