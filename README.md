@@ -190,6 +190,8 @@ This example is similar to that above except MMAP expects the covariates to be p
 
 <p><a id="genotypes_pdf" title=" &nbsp; 1. Genotype Files" class="toc-item"></a></p>
 
+---
+
 ### MMAP Genotype File (same info in PDF)
 
 MMAP has commands to manipulate the binary genotype file.
@@ -221,6 +223,7 @@ command.
 Allele frequency calculations.  The allele frequency for each SNP will be in the csv file.  
 `mmap --write_binary_allele_frequency_file --binary_input_filename <MxS file> --binary_output_filename <filename> --csv_output_filename <filename>`
 
+---
 
 <p><a id="import" title=" &nbsp; 2. Genotype Import" class="toc-item"></a></p>
 
@@ -329,6 +332,8 @@ MMAP.genotype.pdf for details on these options.
 
 Under development
 
+---
+
 <p><a id="export" title=" &nbsp; 3. Genotype Export" class="toc-item"></a></p>
 
 ### MMAP Export Options (same info in PDF)
@@ -363,6 +368,8 @@ To be documented
 #### Idcoeffs
 
 To be documented
+
+---
 
 <p><a id="genomic_matrix" title=" &nbsp; 4. Genomic Matrices" class="toc-item"></a></p>
 
@@ -499,6 +506,8 @@ done
 # combine for autosome file
 $prog --combine_binary_matrix_files $filelist --binary_output_filename G.autosome.bin
 ```
+
+---
 
 <p><a id="variance_components" title=" &nbsp; 5. Variance Components" class="toc-item"></a></p>
 
@@ -654,23 +663,24 @@ Contains the estimates of the fixed and random effects for each individual used 
 
 `mmap --ped pedigree.csv --phenotype_filename phenotype.csv --trait BMI --estimate_variance_components --variance_component_filename kinship.bin Xchr.bin MT.bin --num_em_reml_burnin 2 --use_em_ai_reml --use_dpotrs --variance_component_label A X MT --covariates sex age --interaction age* --file_suffix G.X --num_mkl_threads 2`
 
-#### Simulated test data
+#### <u>Simulated test data</u>
 
 Under development
 
-
+---
 
 
 <p><a id="next" title=" &nbsp; 6. Next Topic" class="toc-item"></a></p>
 
 ### Next topic (same info in PDF)
 
+---
 
 <p><a id="next" title=" &nbsp; 7. Next Topic" class="toc-item"></a></p>
 
 ### Next topic (same info in PDF)
 
-<br>
+---
 
 <p><a id="score_tests" title="Score Tests" class="toc-item"></a></p>
 
