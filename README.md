@@ -825,7 +825,7 @@ of a manuscript.
 
 #### <u>Fixed effect interactions</u>
 
-`--covariates <covariates>'  
+`--covariates <covariates>`  
 List of covariates included in the model.
 
 `--interactions <interaction terms>`  
@@ -927,7 +927,7 @@ hc1_sandwich_esimator --hc2_sandwich_sandwich`
 #### Mixed Model
 
 `mmap [ped, trait, covariate, genotype options] --read_binary_relationship_matrix <file> --empirical_sandwich`  
-Sandwich package: http://cran.r-project.org/web/packages/sandwich/index.html
+Sandwich package: [http://cran.r-project.org/web/packages/sandwich/index.html](http://cran.r-project.org/web/packages/sandwich/index.html)
 
 ---
 
