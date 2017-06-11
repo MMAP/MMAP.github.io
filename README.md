@@ -177,6 +177,8 @@ This example is similar to that above except MMAP expects the covariates to be p
 
 <p><a id="advanced" title="Advanced Topics" class="toc-item"></a></p>
 
+### Advanced Topics
+
 | Advanced&nbsp;Topics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Documentation file |
 | --- | --- |
 | Working with the binary genotype file | [MMAP.genotype.pdf](files/MMAP.genotype.pdf){:target="_blank"} |
@@ -504,6 +506,8 @@ $prog --combine_binary_matrix_files $filelist --binary_output_filename G.autosom
 <br>
 
 <p><a id="score_tests" title="Score Tests" class="toc-item"></a></p>
+
+### Score Tests
 
 | Score&nbsp;Tests&nbsp;(including&nbsp;SKAT)&nbsp;&nbsp;&nbsp; | Documentation file |
 |---|---|
