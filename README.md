@@ -420,7 +420,7 @@ Reference:
                                               Not used for imputed data.
 ```
 
-### PC calculations
+#### PC calculations
 ```
 MMAP computes the PCs then outputs to csv delimited file.
 
