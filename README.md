@@ -392,8 +392,8 @@ KING robust covariance matrices are being implemented.
 
 #### Runtime options
 ```
---write_binary_gmatrix_file     Additive matrix calculation
---write_binary_dmatrix_file     Dominance matrix calculation
+--write_binary_gmatrix_file               Additive matrix calculation
+--write_binary_dmatrix_file               Dominance matrix calculation
 --binary_genotype_filename <SxM file>     A subject-by-marker binary genotype file
 --binary_output_filename <file>           Output filename
 --group_size <num>        Controls the subject-by-subject group size that is computed to fill in binary.
@@ -405,32 +405,41 @@ KING robust covariance matrices are being implemented.
                           Default is to write pairwise counts base on observed data.
 --use_complete_data_count Uses the number of markers for nij in the above formulas to compute the average.
                           Can be combined with –write_matrix_counts.
---num_mkl_threads <num>   Parallelization for MKL matrix multiplication
---autosome                Extract the autosomal SNPs
---chromosome <numbers>    Extract SNP on chromosomes in <numbers>
---genomic_region <chr> <start bp> <stop bp>     Extract SNPs in the genomic region(s) specified.
---marker_set <file>       Use markers in <file>
---subject_set <file>      Use subjects in <file>
---min_minor_allele_frequency <value>            Restrict analysis to markers with MAF greater than <value>.
-                                                Not used for imputed data.
+--num_mkl_threads <num>                       Parallelization for MKL matrix multiplication
+--autosome                                    Extract the autosomal SNPs
+--chromosome <numbers>                        Extract SNP on chromosomes in <numbers>
+--genomic_region <chr> <start bp> <stop bp>   Extract SNPs in the genomic region(s) specified.
+--marker_set <file>                           Use markers in <file>
+--subject_set <file>                          Use subjects in <file>
+--min_minor_allele_frequency <value>          Restrict analysis to markers with MAF greater than <value>.
+                                              Not used for imputed data.
 ```
 
 ### PC calculations
 ```
-MMAP computes the PCs then outputs to csv delimited file
+MMAP computes the PCs then outputs to csv delimited file.
+
 --compute_pc_file                 MMAP option
 --binary_input_filename <file>    Binary covariance file to extract PCs
 --max_pcs2print <num>             Print the <num> PCs with largest eigenvalues
 --pc_output_filename <file>       Output file for the PCs. Sorted by largest to smallest eigenvalue
---subject_set <file>              Restrict the PC calculation to subjects in the file. Note that in practice PCs are computed for all subjects in binary then used for all downstream analyses independent of the number of subjects in the phenotype file. The PCs restricted to subsets of the subjects are no longer orthogonal, but the impact is minimal.
+--subject_set <file>              Restrict the PC calculation to subjects in the file.
+                                  Note that in practice PCs are computed for all subjects in binary
+                                  then used for all downstream analyses independent of the number of
+                                  subjects in the phenotype file. The PCs restricted to subsets of the
+                                  subjects are no longer orthogonal, but the impact is minimal.
 --print_scaled_pcs                Also print eigenvectors scaled by the sqrt of the eigenvalue
 ```
 
 #### Extracting Values from Matrix
 ```
-There are two options to extract the pairwise values from a binary covariance matrix and an option to extract the full matrix. Subject set options are being added to be able extract specified subjects.
---variance_component_matrix_mmap2pairs        Output each pair once. The order depends on the order of the subjects in the file. The output is the upper diagonal of the matrix
---variance_component_matrix_mmap2pairs_all    Output each pair of different subjects twice with opposite orders. The output is the full matrix
+There are two options to extract the pairwise values from a binary covariance matrix and an option
+to extract the full matrix. Subject set options are being added to be able extract specified subjects.
+
+--variance_component_matrix_mmap2pairs        Output each pair once. The order depends on the order of
+                                              the subjects in the file. The output is the upper diagonal of the matrix.
+--variance_component_matrix_mmap2pairs_all    Output each pair of different subjects twice with opposite orders.
+                                              The output is the full matrix.
 --variance_component_matrix_mmap2matrix       Rectangular output with the subject ids as the first row.
 
 Both options require:
@@ -439,24 +448,31 @@ Both options require:
 
 #### Combining Genomic Matrices
 ```
---combine_binary_matrix_files <file list>     List of files to be combined. They must all be of the same count type, that is, have been created with the same --write_matrix_counts option with or without the --use_complete_data_count option.
+--combine_binary_matrix_files <file list>     List of files to be combined. They must all be of the same count type,
+                                              that is, have been created with the same --write_matrix_counts option
+                                              with or without the --use_complete_data_count option.
 --binary_output_filename <output file>        Name of the combined genomic matrix file
 ```
 
 #### Example Commands
 1. Double precision, pairwise adjustment to average, group size 4000 and autosome markers included. Running time 3xtime(SP).
-`mmap --write_binary_gmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename study.0.5.bin --group_size 4000 --single_pedigree --num_mkl_threads 4 --min_minor_allele_frequency 0.05 --autosome`
-2. bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)
+`mmap --write_binary_gmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename study.0.5.bin --group_size 4000 --single_pedigree --num_mkl_threads 4 --min_minor_allele_frequency 0.05 --autosome`  
+2. Bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)
+
 ```
 for chr in {1..22}
 do
-   mmap --write_binary_dmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename dom.${chr}.0.5.bin --group_size 1000 --single_pedigree --write_matrix_counts --num_mkl_threads 4 --min_minor_allele_frequency 0.05 –chromosome ${chr} –single_precision -–use_complete_data_count
+   mmap --write_binary_dmatrix_file --binary_genotype_filename <SxM file> 
+   --binary_output_filename dom.${chr}.0.5.bin --group_size 1000 --single_pedigree --write_matrix_counts 
+   --num_mkl_threads 4 --min_minor_allele_frequency 0.05 –chromosome ${chr} –single_precision -–use_complete_data_count
 done
 
 filelist=`ls dom.*.0.5.bin`
 mmap --combine_binary_matrix_files $filelist --binary_output_filename dom.auto.0.5.bin
 ```
-3. bash shell commands to create leave-one-chromosome out (LOO) matrices
+
+3. Bash shell commands to create leave-one-chromosome out (LOO) matrices
+
 ```
 # get file list. Assume all files have name G.<chr>.bin
 ls G.*.bin > filelist
@@ -473,6 +489,7 @@ done
 # combine for autosome file
 $prog --combine_binary_matrix_files $filelist --binary_output_filename G.autosome.bin
 ```
+
 #### Reference:
 1. Manichaikul, A., et al., Robust relationship inference in genome-wide association studies. Bioinformatics, 2010. 26(22): p. 2867-73.
 
