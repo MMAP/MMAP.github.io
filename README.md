@@ -457,19 +457,22 @@ Both options require:
 #### Example Commands
 1. Double precision, pairwise adjustment to average, group size 4000 and autosome markers included. Running time 3xtime(SP).
 `mmap --write_binary_gmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename study.0.5.bin --group_size 4000 --single_pedigree --num_mkl_threads 4 --min_minor_allele_frequency 0.05 --autosome`  
-2. Bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)  
+2. Bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)
+
 ```
 for chr in {1..22}
 do
    mmap --write_binary_dmatrix_file --binary_genotype_filename <SxM file> 
-   --binary_output_filename dom.${chr}.0.5.bin --group_size 1000 --single_pedigree --write_matrix_counts 
-   --num_mkl_threads 4 --min_minor_allele_frequency 0.05 –chromosome ${chr} –single_precision -–use_complete_data_count
+   --binary_output_filename dom.${chr}.0.5.bin --group_size 1000 --single_pedigree 
+   --write_matrix_counts --num_mkl_threads 4 --min_minor_allele_frequency 0.05 –chromosome ${chr} 
+   -–single_precision -–use_complete_data_count
 done
 
 filelist=`ls dom.*.0.5.bin`
 mmap --combine_binary_matrix_files $filelist --binary_output_filename dom.auto.0.5.bin
 ```
-3. Bash shell commands to create leave-one-chromosome out (LOO) matrices  
+3. Bash shell commands to create leave-one-chromosome out (LOO) matrices
+
 ```
 # get file list. Assume all files have name G.<chr>.bin
 ls G.*.bin > filelist
