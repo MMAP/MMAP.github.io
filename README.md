@@ -362,7 +362,7 @@ To be documented
 
 To be documented
 
-<p><a id="genomic_matrix" title=" &nbsp; 4. Genomic Matrix Calculations" class="toc-item"></a></p>
+<p><a id="genomic_matrix" title=" &nbsp; 4. Genomic Matrix" class="toc-item"></a></p>
 
 ### MMAP Genomic Matrix Calculations (same info in PDF)
 
@@ -376,7 +376,7 @@ Options for X chromosome matrices are being added. There is no pedigree informat
 
 #### Additive matrices
 1. Each SNP has own variance. Generally used in human genetics. Default setting. The average can be taken over the number of observed pairs or the number of markers.
-2. SNPs have common variance. Generally used for genomic prediction. Requires –pooled_variance option. The pooled variance uses all the markers.
+2. SNPs have common variance. Generally used for genomic prediction. Requires `–pooled_variance` option. The pooled variance uses all the markers.
 
 #### Dominance matrices
 Genotype coding: AA=0, AB=BB=1. Similar to the additive matrix there are two forms
@@ -386,7 +386,7 @@ of observed pairs or the number of markers
 pooled_variance option. The pooled variance uses all the markers.
 
 #### KING genomic matrices
-Adding the optio –king_homo option will generate the genomic covariance matrix based on
+Adding the option `-–king_homo` will generate the genomic covariance matrix based on
 Equation 5 in ref [1].  
 KING robust covariance matrices are being implemented.
 
@@ -395,22 +395,24 @@ KING robust covariance matrices are being implemented.
 --write_binary_gmatrix_file     Additive matrix calculation
 --write_binary_dmatrix_file     Dominance matrix calculation
 --binary_genotype_filename <SxM file>     A subject-by-marker binary genotype file
---binary_output_filename <file> Output filename
---group_size <num>              Controls the subject-by-subject group size that is computed to fill in binary. This option impacts
-that memory footprint at the subject level. Generally the group_size should be as large as
-possible for efficiency.
-
+--binary_output_filename <file>           Output filename
+--group_size <num>        Controls the subject-by-subject group size that is computed to fill in binary.
+                          This option impacts that memory footprint at the subject level.
+                          Generally the group_size should be as large as possible for efficiency.
 --pooled_variance         Use 2nd definition of above matrices. Note that pooled variance is less impacted by MAF.
 --single_pedigree         Generate pairwise covariance values for all subjects, independent of the pedigree.
---write_matrix_counts     Add counts to the binary output file. Required if genomic matrices are to be combined. Default is to write pairwise counts base on observed data.
---use_complete_data_count Uses the number of markers for nij in the above formulas to compute the average. Can be combined with –write_matrix_counts.
+--write_matrix_counts     Add counts to the binary output file. Required if genomic matrices are to be combined.
+                          Default is to write pairwise counts base on observed data.
+--use_complete_data_count Uses the number of markers for nij in the above formulas to compute the average.
+                          Can be combined with –write_matrix_counts.
 --num_mkl_threads <num>   Parallelization for MKL matrix multiplication
 --autosome                Extract the autosomal SNPs
 --chromosome <numbers>    Extract SNP on chromosomes in <numbers>
 --genomic_region <chr> <start bp> <stop bp>     Extract SNPs in the genomic region(s) specified.
 --marker_set <file>       Use markers in <file>
 --subject_set <file>      Use subjects in <file>
---min_minor_allele_frequency <value>    Restrict analysis to markers with MAF greater than <value>. Not used for imputed data.
+--min_minor_allele_frequency <value>            Restrict analysis to markers with MAF greater than <value>.
+                                                Not used for imputed data.
 ```
 
 ### PC calculations
