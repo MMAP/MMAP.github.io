@@ -386,12 +386,14 @@ of observed pairs or the number of markers
 pooled_variance option. The pooled variance uses all the markers.
 
 #### KING genomic matrices
-Adding the option `-–king_homo` will generate the genomic covariance matrix based on
-Equation 5 in ref [1].  
+Adding the option `-–king_homo` will generate the genomic covariance matrix based on Equation 5 in ref [1].  
 KING robust covariance matrices are being implemented.
 
-##### Reference:
-1. Manichaikul, A., et al., Robust relationship inference in genome-wide association studies. Bioinformatics, 2010. 26(22): p. 2867-73.
+```
+Reference:
+1. Manichaikul, A., et al., Robust relationship inference in genome-wide association studies.
+   Bioinformatics, 2010. 26(22): p. 2867-73.
+```
 
 #### Runtime options
 ```
