@@ -1060,9 +1060,9 @@ The file [MMAP.score.test.tar.gz](files/MMAP.score.test.tar.gz) contains files a
 
 **References**
 
-1. Voorman A, Brody J, Chen H, Lumley T. seqMeta: An R package for meta-analyzing region-based tests of rare DNA variants 2013. Available from: [http://cran.r-project.org/web/packages/seqMeta/].
-2. Zhan X. rvtests 2014. Available from:[https://github.com/zhanxw/rvtests].
-3. Abacasis G. RAREMETALWORKER 2013. Available from: [http://genome.sph.umich.edu/wiki/RAREMETALWORKER].
+1. Voorman A, Brody J, Chen H, Lumley T. seqMeta: An R package for meta-analyzing region-based tests of rare DNA variants 2013. Available from: [http://cran.r-project.org/web/packages/seqMeta/](http://cran.r-project.org/web/packages/seqMeta/){:target="_blank"}.
+2. Zhan X. rvtests 2014. Available from:[https://github.com/zhanxw/rvtests](https://github.com/zhanxw/rvtests){:target="_blank"}.
+3. Abacasis G. RAREMETALWORKER 2013. Available from: [http://genome.sph.umich.edu/wiki/RAREMETALWORKER](http://genome.sph.umich.edu/wiki/RAREMETALWORKER){:target="_blank"}.
 4. Schifano ED, Epstein MP, Bielak LF, Jhun MA, Kardia SL, Peyser PA, Lin X. SNP Set Association Analysis for Familial Data. Genetic epidemiology. 2012. doi: 10.1002/gepi.21676. PubMed PMID: 22968922; PubMed Central PMCID: PMC3683469.
 
 ---
