@@ -1001,8 +1001,10 @@ Converting MMAP output to seqMeta R object
 
 `mmap2seqmeta.R <trait>.<suffix>.prepscores.txt <output filename> <R name>`  
 R script to convert MMAP output file to an R object for input into seqMeta. \<R name\> is the name assigned when running prepScores that will be used in the skatMeta call. For example,  
-`<R Name><-prepScores(…) and`  
-`skatMeta(<R name>,SNPInfo=SNPInfo,snpName=”Name”,aggregateBy=”gene”)`
+```
+<R Name><-prepScores(…) and  
+skatMeta(<R name>,SNPInfo=SNPInfo,snpName=”Name”,aggregateBy=”gene”)
+```
 
 #### <u>Example MMAP commands</u>
 
@@ -1058,9 +1060,9 @@ The file [MMAP.score.test.tar.gz](files/MMAP.score.test.tar.gz) contains files a
 
 **References**
 
-1. Voorman A, Brody J, Chen H, Lumley T. seqMeta: An R package for meta-analyzing region-based tests of rare DNA variants 2013. Available from: http://cran.r-project.org/web/packages/seqMeta/.
-2. Zhan X. rvtests 2014. Available from: https://github.com/zhanxw/rvtests. 5
-3. Abacasis G. RAREMETALWORKER 2013. Available from: http://genome.sph.umich.edu/wiki/RAREMETALWORKER.
+1. Voorman A, Brody J, Chen H, Lumley T. seqMeta: An R package for meta-analyzing region-based tests of rare DNA variants 2013. Available from: [http://cran.r-project.org/web/packages/seqMeta/].
+2. Zhan X. rvtests 2014. Available from:[https://github.com/zhanxw/rvtests].
+3. Abacasis G. RAREMETALWORKER 2013. Available from: [http://genome.sph.umich.edu/wiki/RAREMETALWORKER].
 4. Schifano ED, Epstein MP, Bielak LF, Jhun MA, Kardia SL, Peyser PA, Lin X. SNP Set Association Analysis for Familial Data. Genetic epidemiology. 2012. doi: 10.1002/gepi.21676. PubMed PMID: 22968922; PubMed Central PMCID: PMC3683469.
 
 ---
