@@ -518,7 +518,7 @@ The pedigree, phenotype and trait options are as described previously.
 --covariates <covariates>
 ```
 
-#### Variance Component Likelihood Estimation
+#### <u>Variance Component Likelihood Estimation</u>
 
 `--estimate variance components`
 
@@ -542,7 +542,7 @@ The default model assume heteroscedastic error (identity matrix), but more gener
 
 Label is used in the output file to distinguish the error variance component names.
 
-##### Likelihood Options
+**Likelihood Options**
 
 MMAP implements 4 different options for REML likelihood estimation: EM-REML, AI-REML, Fisher information and Newton-Raphson. Both Fisher information and Netwon-Raphson involve a trace of matrix products that is computationally expensive, so NOT recommended. AI-REML uses the average information of these two methods, which eliminates the trace term, leading to faster computational algorithm. EM-REML if often combined with AI-REML to provide initial estimates.
 
@@ -606,32 +606,56 @@ Use single precision BLAS routine SPOTRI until convergence reaches a pre-specifi
 
 Specifies the number of threads to use for the matrix operations. Default is 1 one thread. Parallelization can provide significant performance increase for computing the variance estimates under the null with large data sets with dense covariance matrices.
 
-`--num_iterations <val>
+`--num_iterations <val>`
+
 Sets the maximum number of iterations for the variance component estimation. The default is 500 which would only potentially be needed if the optimization were EM-REML only. AI-REML converges generally in 10-20 iterations. A single iteration can be used to generate estimates of the random effects at a user-specified variance estimates.
-Setting Initial Estimates
-Setting the initial estimates of the variances or the ratio of the variance estimates in general does not have a significant impact on the number of AI-REML iterations. However, one application would be to set the values to external variance estimates to generate estimates of random effects using the –num_iterations 1 option to be used for additional analysis such as prediction.
---initial_variance_component_values <val 1> <val 2> … <val N>
+
+#### <u>Setting Initial Estimates</u>
+
+Setting the initial estimates of the variances or the ratio of the variance estimates in general does not have a significant impact on the number of AI-REML iterations. However, one application would be to set the values to external variance estimates to generate estimates of random effects using the `-–num_iterations 1` option to be used for additional analysis such as prediction.
+
+`--initial_variance_component_values <val 1> <val 2> … <val N>`
+
 The values of the variances to seed the estimation procedure. Includes the error term
---initial_variance_component_lambdas <val 1> <val 2> … <val N>
+
+`--initial_variance_component_lambdas <val 1> <val 2> … <val N>`
+
 The values of the variance component/total variance ratios. Easier to set than the actual variances. For example, if the heritability is assume 0.2 then an initial values would be 0.2 0.8 with a model with the kinship coefficient.
---write_projection_matrix_file <filename>
+
+`--write_projection_matrix_file <filename>`
+
 Write the projection matrix P at the REML estimate under the null to a binary file. Useful for multiple runs where the null does not change to avoid recomputing P. For example, running a single chromosome at a time or changing the definition of snp set to model different pathways. Note that if the null models changes, for example, adding SNPs in conditional analysis, a new P needs to be computed. Not yet implemented.
-4
---read_projection_matrix_file <filename>
-Read in a projection matrix <filename>. Not yet implemented.
-Handling Large Data
+
+`--read_projection_matrix_file <filename>`
+
+Read in a projection matrix `<filename>`. _Not yet implemented._
+
+#### <u>Handling Large Data</u>
+
 The memory footprint of the analysis depends on the number subjects and the number of variance components in the model. For example, with 100,000 subjects, the memory needed for each covariance matrix is 100K x 100K x 8 bytes = 80 Gb. If the analysis was estimating the contribution of each human autosome and the X chromosome using genetic data, then the requirement would 80 Gb x 23 = 1.7 Tb. We have implemented options to trade memory for disk reads to be able to reduce the memory footprint to that required by a single variance component independent of the number of components in the model. Thus, the above example with 23 components and error would require 80 Gb. An analysis of 250,000 subjects would require 500 Gb. The running time depends on the number of cores available. Our analysis of additive and dominance components in 90,000 cows using 20 cores required under 5 hours.
---create_inverse_from_disk --write_disk_variance_component_filename <filename 1> <filename 2> …. < filename N>
+
+`--create_inverse_from_disk --write_disk_variance_component_filename <filename 1> <filename 2> …. < filename N>`
+
 There must be the same number of filenames as used in --binary_covariance_filename option. These files are temporary and can be deleted after the run.
-Output files
-<trait>.<suffix>.variance.components.T.csv
+
+#### <u>Output files</u>
+
+`<trait>.<suffix>.variance.components.T.csv`
+
 Contains the estimates and standard errors of the variance components and fixed effects. P-values of the fixed effects and likelihood are also provided.
-<trait>.<suffix>.variance.components.model.csv
+
+`<trait>.<suffix>.variance.components.model.csv`
+
 Contains the estimates of the fixed and random effects for each individual used in the analysis. Zscores of the random effects are also provide for ranking by standard deviations from the population mean. The <trait>_ERROR term can be used as a residual in linear regression. If multiple residual error terms are modeled then the term <trait>_COMBINED_ERROR is the sum of the error terms and can be used as the residual.
-Example MMAP commands
-Family data: Command run score test with null model BMI = mean + sex + age + sex*age+ a + x + mt + e, where sex, age, and sex-by-age interaction are fixed effects, g is the additive random effect with label A and covariance matrix kinship.bin, x is the X chromosome effect with label X and covariance matrix Xchr.bin and mt is the mitochondrial random effect with label MT and covariance matrix MT.bin. The MT.bin is constructed as a 0-1 matrix grouping maternal lineages. Estimation of the variances use EM-REML for 2 iterations, then AI-REML using DPOTRS and two threads. 5
-mmap --ped pedigree.csv --phenotype_filename phenotype.csv --trait BMI --estimate_variance_components --variance_component_filename kinship.bin Xchr.bin MT.bin --num_em_reml_burnin 2 --use_em_ai_reml --use_dpotrs --variance_component_label A X MT --covariates sex age --interaction age* --file_suffix G.X --num_mkl_threads 2
-Simulated test data
+
+#### <u>Example MMAP commands</u>
+
+**Family data:** Command run score test with null model BMI = mean + sex + age + sex*age+ a + x + mt + e, where sex, age, and sex-by-age interaction are fixed effects, g is the additive random effect with label A and covariance matrix kinship.bin, x is the X chromosome effect with label X and covariance matrix Xchr.bin and mt is the mitochondrial random effect with label MT and covariance matrix MT.bin. The MT.bin is constructed as a 0-1 matrix grouping maternal lineages. Estimation of the variances use EM-REML for 2 iterations, then AI-REML using DPOTRS and two threads.
+
+`mmap --ped pedigree.csv --phenotype_filename phenotype.csv --trait BMI --estimate_variance_components --variance_component_filename kinship.bin Xchr.bin MT.bin --num_em_reml_burnin 2 --use_em_ai_reml --use_dpotrs --variance_component_label A X MT --covariates sex age --interaction age* --file_suffix G.X --num_mkl_threads 2`
+
+#### Simulated test data
+
 Under development
 
 
