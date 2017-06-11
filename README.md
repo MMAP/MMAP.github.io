@@ -175,6 +175,8 @@ This command will analyze the trait HDL adjusting for covariates AGE, SEX and BM
 `mmap --ped <pedfile --read_binary_covariance_file pedigree.bin --trait HDL --phenotype_id MYEGO --phenotype_filename pheno.csv --covariates AGE SEX --file_suffix NO.BMI --binary_genotype_filename gwas.bin --model add --chromosome 4 X`  
 This example is similar to that above except MMAP expects the covariates to be present in pheno.csv and BMI is dropped as a covariate. The file suffix is NO.BMI which will prevent the previous analysis results from being clobbered. MMAP will also perform marker analysis for chromosomes 4 and X using the additive model.
 
+---
+
 <p><a id="advanced" title="Advanced Topics" class="toc-item"></a></p>
 
 ### Advanced Topics
@@ -188,9 +190,9 @@ This example is similar to that above except MMAP expects the covariates to be p
 | Pedigree and Environmental Covariance Matrices | [MMAP.covariance.matrix.pdf](files/MMAP.covariance.matrix.pdf){:target="_blank"} |
 | GxG, GxE, ExE Interaction Analysis and Sandwich Estimators | [MMAP.interaction.pdf](files/MMAP.interaction.pdf){:target="_blank"} |
 
-<p><a id="genotypes_pdf" title=" &nbsp; 1. Genotype Files" class="toc-item"></a></p>
-
 ---
+
+<p><a id="genotypes_pdf" title=" &nbsp; 1. Genotype Files" class="toc-item"></a></p>
 
 ### MMAP Genotype File (same info in PDF)
 
