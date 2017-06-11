@@ -707,7 +707,7 @@ Autosome
 `mmap –compute_binary_relationship_matrix_by_groups --ped Amish.ped.csv --binary_output_filename Amish.autosome.relationship.bin --group_size 25000 --single_pedigree`  
 
 X chromosome  
-`mmap –compute_binary_relationship_matrix_by_groups --ped Amish.ped.csv --binary_output_filename Amish.X.relationship.bin --group_size 25000 --single_pedigree –xlinked_relationship_matrix'  
+`mmap –compute_binary_relationship_matrix_by_groups --ped Amish.ped.csv --binary_output_filename Amish.X.relationship.bin --group_size 25000 --single_pedigree –xlinked_relationship_matrix'`  
 
 #### <u>Pedigree Common Environment and Cytoplasmic inheritance</u>
 
@@ -742,6 +742,7 @@ Contains the pedigree plus an extra column with numerical value for each group
 MMAP can construct a random effect based on a grouping variable such as sex, study, plate, generation, etc, from a categorical or numerical variable in a csv file. The matrix is 0-1 with 1 in the (J,K) entry if subject J and subject K are in the same group, 0 otherwise. Missing data is treated as an independent group, that is, with a 1 for that individual on the diagonal.
 
 `--compute_group_covariance_file`  
+
 `--phentoype_id <ID>`  
 Required. The header token that identifies the subject ID
 
@@ -761,6 +762,7 @@ MMAP can import user generated matrices in two formats to facilitate integration
 For files formatted IDA IDB `<val>` use the following option. This option assumes upper triangular order as the default. That is if there are N subjects in the file, then IDA is the first subject for lines 1 to N, the second subject for lines N+1 to N-1, etc, with IDB varying for each line. Thus the file is expected to have N*(N+1)/2 lines plus 1 for the header, which can be skipped. The file is assumed to have a header.
 
 `--pairwise_value_txt2mmap`  
+
 `--txt_input_filename <file>`  
 Required.
 
