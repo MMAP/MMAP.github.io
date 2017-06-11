@@ -896,16 +896,14 @@ output file.
 #### Mixed model
 
 In the mixed model the variance structure V is not the identity, thus
-   
-1 1 Var(ˆ) X V 1X X V 1 ˆ V 1X X X
-          . The sandwich ˆ
-that is currently supported is
-ˆ  diag(ˆˆ' ) , where ˆ  y  Xˆ  gˆ  eˆ which corresponds to the formula for the Huber-White
+![image](images/mixed1.png). The sandwich ![image](images/mixed2.png)
+that is currently supported is ![image](images/mixed3.png) which corresponds to the formula for the Huber-White
 HC0 estimator. This matrix is diagonal so it models the variance of Y treating individuals as
 independent clusters. There are no hat options at the moment as computing the Hat matrix
 requires greater computational burden.
+
 This is a work in progress so other formulations that may be more appropriate are being
-researched, for example, ˆ  gˆgˆ+diag(ˆˆ' ) . If there is any concern regarding the HC0 model,
+researched, for example, ![image](images/mixed4.png). If there is any concern regarding the HC0 model,
 then an alternative strategy is use MMAP to fit the baseline variance component model, say
 polygenic model, then use the error residuals in output file as the phenotype in the linear
 regression (--linear_regression). These residuals are then independent.
