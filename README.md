@@ -436,8 +436,8 @@ MMAP computes the PCs then outputs to csv delimited file.
 There are two options to extract the pairwise values from a binary covariance matrix and an option
 to extract the full matrix. Subject set options are being added to be able extract specified subjects.
 
---variance_component_matrix_mmap2pairs        Output each pair once. The order depends on the order of
-                                              the subjects in the file. The output is the upper diagonal of the matrix.
+--variance_component_matrix_mmap2pairs        Output each pair once. The order depends on the order of the 
+                                              subjects in the file. The output is the upper diagonal of the matrix.
 --variance_component_matrix_mmap2pairs_all    Output each pair of different subjects twice with opposite orders.
                                               The output is the full matrix.
 --variance_component_matrix_mmap2matrix       Rectangular output with the subject ids as the first row.
@@ -455,9 +455,10 @@ Both options require:
 ```
 
 #### Example Commands
-1. Double precision, pairwise adjustment to average, group size 4000 and autosome markers included. Running time 3xtime(SP).
-`mmap --write_binary_gmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename study.0.5.bin --group_size 4000 --single_pedigree --num_mkl_threads 4 --min_minor_allele_frequency 0.05 --autosome`  
-2. Bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)
+- Double precision, pairwise adjustment to average, group size 4000 and autosome markers included. Running time 3xtime(SP).
+`mmap --write_binary_gmatrix_file --binary_genotype_filename <SxM file> --binary_output_filename study.0.5.bin --group_size 4000 --single_pedigree --num_mkl_threads 4 --min_minor_allele_frequency 0.05 --autosome`
+
+- Bash shell commands to create dominance matrix by chromosome then combine into single file. Group size is 1000. Single precision and constant adjustment to average, so running time is time(SP)
 
 ```
 for chr in {1..22}
@@ -470,8 +471,9 @@ done
 
 filelist=`ls dom.*.0.5.bin`
 mmap --combine_binary_matrix_files $filelist --binary_output_filename dom.auto.0.5.bin
+
 ```
-3. Bash shell commands to create leave-one-chromosome out (LOO) matrices
+- Bash shell commands to create leave-one-chromosome out (LOO) matrices
 
 ```
 # get file list. Assume all files have name G.<chr>.bin
