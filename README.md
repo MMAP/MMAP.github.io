@@ -873,13 +873,12 @@ estimators HC0 (Huber-White), HC1, HC2, HC3, HC4, HC4m and HC5 as defined in the
 of weights ![image](images/linear3.png) is determined by the HC model. 
 
 The weights are generally a function of the
-residuals ˆ
-k k k e  y  X  and diagonals kk h of the Hat matrix   1
-H X X X X
-    . For example
-the Huber-White weights are 2 ˆ k k w  e and the weights for HC3 are  2 2 ˆ 1 k k kk w  e  h .
+residuals ![image](images/linear4.png) and diagonals ![image](images/linear5.png) of the
+Hat matrix ![image](images/linear6.png). For example
+the Huber-White weights are ![image](images/linear7.png) and the weights for HC3 are ![image](images/linear8.png) .
 
 Any combination of the six sandwich estimators can be included in the regression analysis.
+```
 --hc0_sandwich_estimator
 --hc1_sandwich_estimator
 --hc2_sandwich_estimator
@@ -887,10 +886,11 @@ Any combination of the six sandwich estimators can be included in the regression
 --hc4_sandwich_estimator
 --hc4m_sandwich_estimator
 --hc5_sandwich_estimator
+```
 The MMAP output will contain HC0, HC1, HC2, HC3, HC4, HC4m and HC5 prefixed columns
 containing the estimates for the standard errors and the p-values. Note that the betas are not
 changed by the sandwich estimators. If sandwich estimators are included in the interaction
-model, the robust covariance estimates are also provided in the <trait>.<prefix>.mle.pval.csv
+model, the robust covariance estimates are also provided in the `<trait>.<prefix>.mle.pval.csv`
 output file.
 
 #### Mixed model
