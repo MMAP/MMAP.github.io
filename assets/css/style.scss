@@ -124,13 +124,13 @@ article.full .content-body.full-width {
 }
 
 .toc-wrapper {
-  /*float: right; */
-  float: left;
+  float: right;
+  /* float: left; */
   width: 200px;
   /* added following 2 lines to place toc on right side of document */
   margin-left: -200px;   /* prevents interference with document text */
-  /*padding: 0 0 0 200px;*/  /* pushes toc to the right */
-  padding: 0 200px 0 0;  /* pushes toc to the left */
+  padding: 0 0 0 200px;  /* pushes toc to the right */
+  /*padding: 0 200px 0 0;*/  /* pushes toc to the left */
 }
 ol.toc {
   width: 200px;
