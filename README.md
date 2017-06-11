@@ -390,6 +390,9 @@ Adding the option `-–king_homo` will generate the genomic covariance matrix ba
 Equation 5 in ref [1].  
 KING robust covariance matrices are being implemented.
 
+##### Reference:
+1. Manichaikul, A., et al., Robust relationship inference in genome-wide association studies. Bioinformatics, 2010. 26(22): p. 2867-73.
+
 #### Runtime options
 ```
 --write_binary_gmatrix_file               Additive matrix calculation
@@ -491,10 +494,6 @@ done
 # combine for autosome file
 $prog --combine_binary_matrix_files $filelist --binary_output_filename G.autosome.bin
 ```
-
-#### Reference:
-1. Manichaikul, A., et al., Robust relationship inference in genome-wide association studies. Bioinformatics, 2010. 26(22): p. 2867-73.
-
 
 <p><a id="next" title=" &nbsp; 5. Next Topic" class="toc-item"></a></p>
 
