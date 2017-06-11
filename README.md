@@ -179,7 +179,7 @@ This example is similar to that above except MMAP expects the covariates to be p
 
 ### Advanced Topics
 
-| Advanced&nbsp;Topics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Documentation file |
+| Advanced&nbsp;Topic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Documentation file |
 | --- | --- |
 | Working with the binary genotype file | [MMAP.genotype.pdf](files/MMAP.genotype.pdf){:target="_blank"} |
 | Importing data from other formats: PLINK, MINIMAC, IMPUTE2, VCF | [MMAP.import.export.pdf](files/MMAP.import.export.pdf){:target="_blank"} |
