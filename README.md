@@ -869,16 +869,16 @@ is not impacted if genotype file has mixed ethnicities.
 #### Linear Regression
 For linear regression MMAP implements a menu of heteroskedasticity consistent (HC)
 estimators HC0 (Huber-White), HC1, HC2, HC3, HC4, HC4m and HC5 as defined in the R
-[sandwich](http://cran.r-project.org/web/packages/sandwich/index.html){:target="_blank"} package. These estimators model the variance of the beta estimate as
-    ˆ 1 ˆ 1 Var( ) X X X X X X
-      with diagonal matrix 1 2
-ˆ ( , ,..., ) n   diag w w w where the choice
-of weights k w is determined by the HC model. The weights are generally a function of the
+[sandwich](http://cran.r-project.org/web/packages/sandwich/index.html){:target="_blank"} package. These estimators model the variance of the beta estimate as !(images/linear1.png) with diagonal matrix !(images/linear2.png) where the choice
+of weights !(images/linear3.png) is determined by the HC model. 
+
+The weights are generally a function of the
 residuals ˆ
 k k k e  y  X  and diagonals kk h of the Hat matrix   1
 H X X X X
     . For example
 the Huber-White weights are 2 ˆ k k w  e and the weights for HC3 are  2 2 ˆ 1 k k kk w  e  h .
+
 Any combination of the six sandwich estimators can be included in the regression analysis.
 --hc0_sandwich_estimator
 --hc1_sandwich_estimator
