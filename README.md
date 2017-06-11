@@ -503,6 +503,17 @@ $prog --combine_binary_matrix_files $filelist --binary_output_filename G.autosom
 
 ### Next topic (same info in PDF)
 
+
+
+<p><a id="next" title=" &nbsp; 5. Next Topic" class="toc-item"></a></p>
+
+### Next topic (same info in PDF)
+
+
+<p><a id="next" title=" &nbsp; 5. Next Topic" class="toc-item"></a></p>
+
+### Next topic (same info in PDF)
+
 <br>
 
 <p><a id="score_tests" title="Score Tests" class="toc-item"></a></p>
