@@ -15,7 +15,7 @@ description: "MMAP is a comprehensive mixed model program for analysis of pedigr
 
 [**HOME**](https://MMAP.github.io) &nbsp; &nbsp; [**Latest Release**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/releases/latest){:target="_blank"} &nbsp; &nbsp; [**Issues and Q&A**](https://github.com/MMAP/MMAP-releases-issues-Q-and-A/issues){:target="_blank"} &nbsp; &nbsp; **MMAP Cheat Sheet**
 
-## MMAP Cheat Sheet compiled by Jim Perry
+## MMAP Cheat Sheet by Jim Perry
 
 This Cheat Sheet is designed to facilitate creation of shell scripts for running MMAP.
 
@@ -112,8 +112,8 @@ The infile must be MxS format. The outfile has the results. Marker and Subjects 
 
 `--include_duplicate_markers`  Use this option with `--write_reduced_genotype_binary` and `--marker_by_subject_mmap2csv` to insure you get all desired markers when there are duplicate markers with SAME SNPNAME are in the genotype file.
 
-For spare input file use the folloing syntax. Marker_set and (soon subject_set) options are valid.  
-`$mmap --sparse2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
+A sparse input file will be detected automatically.  Thus, use same syntax. Marker_set and (soon subject_set) options are valid.  
+`$mmap --marker_by_subject_mmap2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
 
 ---
 
