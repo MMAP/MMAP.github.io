@@ -112,8 +112,8 @@ The infile must be MxS format. The outfile has the results. Marker and Subjects 
 
 `--include_duplicate_markers`  Use this option with `--write_reduced_genotype_binary` and `--marker_by_subject_mmap2csv` to insure you get all desired markers when there are duplicate markers with SAME SNPNAME are in the genotype file.
 
-A sparse input file will be detected automatically.  Thus, use same syntax. Marker_set and (soon subject_set) options are valid.  
-`$mmap --marker_by_subject_mmap2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
+For sparse input file, use following syntax.  Marker_set and (soon subject_set) options are valid.  
+`$mmap --mmap_sparse2csv --binary_input_filename $genoMxSbin --csv_output_filename $genoMxScsv`
 
 ---
 
