@@ -312,7 +312,7 @@ examples:
 ### Building binary genotype files
 
 #### Create a "sparse" formated binary from vcf AND force SNPNAME to be chr:pos:ref:alt
-`--vcf2mmap_binary_genotype_file --use_chr_pos_alt_ref --vcf_input_filename <vcf> --binary_output_filename <sparse>`
+`--vcf2sparse --use_chr_pos_alt_ref --vcf_input_filename <vcf> --binary_output_filename <sparse>`
 
 #### Create the MxS.bin genotype file from a .csv file
 
