@@ -182,7 +182,7 @@ $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
 done
 exit
 
-# Options to --min_minor_allele_frequency:
+# Other allele frequency and allele count options:
   --min_mac 10    <== minimum minor allele count
   --max_mac 50    <== maximum minor allele count
   --max_minor_allele_frequency 0.05   <== 5% maximum allele frequency
