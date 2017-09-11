@@ -177,10 +177,17 @@ $mmap --ped $ped --model add --read_binary_covariance_file $kinbin \
   --binary_covariate_filename $genobin \
   --marker_set $snps \
   --subject_set $subjects \
-  --min_minor_allele_frequency 0.02 \  <== ONLY for standard genotype files (see "imputation files" below)
+  --min_minor_allele_frequency 0.02 \  <== 2%  Use ONLY for standard genotype files (see "imputation files" below)
   >> $stdoutfile
 done
 exit
+
+# Options to --min_minor_allele_frequency:
+  --min_mac 10    <== minimum minor allele count
+  --max_mac 50    <== maximum minor allele count
+  --max_minor_allele_frequency 0.05   <== 5% maximum allele frequency
+
+
 ```
 
 ---
