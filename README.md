@@ -220,7 +220,7 @@ Example options:
 
 Extracting Genotypes as csv file. The infile must be MxS format. The outfile has the results. The options above are valid with this
 command.  
-`mmap --marker_by_subject_binary2csv --binary_input_filename <infile> --csv_output_filename <outfile>`
+`mmap --marker_by_subject_mmap2csv --binary_input_filename <infile> --csv_output_filename <outfile>`
 
 Allele frequency calculations.  The allele frequency for each SNP will be in the csv file.  
 `mmap --write_binary_allele_frequency_file --binary_input_filename <MxS file> --binary_output_filename <filename> --csv_output_filename <filename>`
