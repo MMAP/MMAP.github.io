@@ -443,7 +443,7 @@ The Omics Analysis Search and Information System ([OASIS](https://omicsOASIS.git
 
 OASIS accomplishes this with a web-based search system and a variety of real-time analysis tools including conditional & multi-covariates analysis, LD calculations, alternative data transformations, and customized SKAT analysis. On-demand visualizations are provided in the form of boxplots, histograms, LocusZoom & Haploview plots. The OASIS search reports contain a broad spectrum of annotation from Annovar and WGSA plus a variety of links to external resources such as gnomAD, GTEx, HaploReg, Roadmap, UCSC and NCBI. Because OASIS has a web-based user interface, an understanding of programming or the UNIX operating system is not required.
 
-**OASIS is powered by MMAP.** &nbsp;The OASIS user interface coordinates the use of MMAP’s unique options and algorithms to provide repeated, custom computations in a fraction of the time normally required. Please visit the ([**OASIS**](https://omicsOASIS.github.io)) website for more information!
+**OASIS is powered by MMAP.** &nbsp;The OASIS user interface coordinates the use of MMAP’s unique options and algorithms to provide repeated, custom computations in a fraction of the time normally required. Please visit the [**OASIS**](https://omicsOASIS.github.io) website for more information!
 
 ---
 
