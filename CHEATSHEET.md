@@ -433,6 +433,16 @@ If the analysis plan calls for inverse normal of the covariate adjusted residual
 
 ---
 
+<p><a id="future_developments" title="Future Developments" class="toc-item"></a></p>
+
+### OASIS: Omics Analysis Search and Information System - powered by MMAP
+
+OASIS is powered by MMAP
+
+[OASIS](https://omicsOASIS.github.io)
+
+---
+
 <p align="center">MMAP: Mixed Model Analysis for Pedigrees and Populations - Copyright © 2017</p>
 &nbsp;
 
