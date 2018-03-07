@@ -435,9 +435,15 @@ If the analysis plan calls for inverse normal of the covariate adjusted residual
 
 <p><a id="future_developments" title="Future Developments" class="toc-item"></a></p>
 
-### OASIS: Omics Analysis Search and Information System - powered by MMAP
+### Future Developments
 
-OASIS is powered by MMAP
+#### OASIS: Omics Analysis Search and Information System - [**OASIS**](https://omicsOASIS.github.io)
+
+[OASIS](https://omicsOASIS.github.io) is an information system for analyzing, searching and visualizing associations between phenotypes, genotypes, and other types of omics data (such as transcriptomics, metabolomics, etc.). It is designed to enable discovery by connecting to the thought processes of biological researchers in a way that allows them to search results from an initial GWAS (or other type of association study), ask follow up questions and get the answers in real-time.
+
+OASIS accomplishes this with a web-based search system and a variety of real-time analysis tools including conditional & multi-covariates analysis, LD calculations, alternative data transformations, and customized SKAT analysis. On-demand visualizations are provided in the form of boxplots, histograms, LocusZoom & Haploview plots. The OASIS search reports contain a broad spectrum of annotation from Annovar and WGSA plus a variety of links to external resources such as gnomAD, GTEx, HaploReg, Roadmap, UCSC and NCBI. Because OASIS has a web-based user interface, an understanding of programming or the UNIX operating system is not required.
+
+OASIS is powered by MMAP, a mixed model, genetic association software program written by Jeff O’Connell at the University of Maryland. MMAP performs the real-time analysis options “behind the scenes”. The OASIS user interface coordinates the use of MMAP’s unique options and algorithms to provide repeated, custom computations in a fraction of the time normally required.
 
 [OASIS](https://omicsOASIS.github.io)
 
