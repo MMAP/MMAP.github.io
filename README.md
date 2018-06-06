@@ -223,7 +223,7 @@ Extracting genotypes as csv file. The infile must be MxS format. The outfile has
 command.  
 `mmap --marker_by_subject_mmap2csv --binary_input_filename <infile> --csv_output_filename <outfile>`
 
-Extracting subject list from a genotype file.
+Extracting subject list from a genotype file.  
 `mmap --write_binary_genotype_file_subject_list --binary_input_filename <infile> --txt_output_filename <outfile>`
 
 Allele frequency calculations.  The allele frequency for each SNP will be in the csv file.  
