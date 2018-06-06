@@ -123,7 +123,7 @@ Example [genotype file](files/genotypes.txt){:target="_blank"} contains data for
 
 `--genomic_region <chrA> <bp startA> <bp_endB> … <chrN> <bp startN> <bp_endN>` Analysis is restricted to genomic regions specified by chromosome and bp window. Base pair values. –chromosome 4 would be the same as –genomic_region 4 0 5000000.
 
-`--marker_set <text file>` Analysis is restricted to the set of markers in the marker file. MMAP searches the SNPNAME and RSNUM columns to match the markers listed. NO header in the file
+`--marker_set <text file>` Analysis is restricted to the set of markers in the marker file. MMAP searches the SNPNAME and RSNUM columns to match the markers listed. NO header in the file.
 
 
 <p><a id="analysis" title="Analysis Set" class="toc-item"></a></p>
@@ -132,7 +132,7 @@ Example [genotype file](files/genotypes.txt){:target="_blank"} contains data for
 
 MMAP takes the intersection of subjects in the pedigree and phenotype and also covariate and genotype files, if present, to generate the set of subjects used for analysis. Subjects with missing phenotype or covariate values are dropped. MMAP has an option to specify a subject set file, that if present, will also be included in the intersection. In the phenotype and covariate examples above the analysis set would for BMI with covariates AGE would be subject F from pedigree 1 and subject 12 from pedigree DM. If the genotype file is included then the analysis set contains only subject F.
 
-`--subject_set <input file>` Single column file with no header that will control the individuals included in the analysis. This set is intersected with individuals with data from the phenotype and covariate file
+`--subject_set <input file>` Single column file with no header that will control the individuals included in the analysis. This set is intersected with individuals with data from the phenotype and covariate file.
 
 
 <p><a id="running" title="Running MMAP" class="toc-item"></a></p>
@@ -216,11 +216,15 @@ Example options:
 --genomic_region <chr> <start bp> <stop bp>    Extract SNPs in the genomic region(s) specified.
 --marker_set <file>      Extract markers in <file>
 --subject_set <file>     Extract subjects in <file>
+--exclude_subject_set <file>   Extract all subjects excluding those in <file>
 ```
 
-Extracting Genotypes as csv file. The infile must be MxS format. The outfile has the results. The options above are valid with this
+Extracting genotypes as csv file. The infile must be MxS format. The outfile has the results. The options above are valid with this
 command.  
 `mmap --marker_by_subject_mmap2csv --binary_input_filename <infile> --csv_output_filename <outfile>`
+
+Extracting subject list from a genotype file.
+`mmap --write_binary_genotype_file_subject_list --binary_input_filename <infile> --txt_output_filename <outfile>`
 
 Allele frequency calculations.  The allele frequency for each SNP will be in the csv file.  
 `mmap --write_binary_allele_frequency_file --binary_input_filename <MxS file> --binary_output_filename <filename> --csv_output_filename <filename>`
