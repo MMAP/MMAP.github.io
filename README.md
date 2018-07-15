@@ -121,7 +121,7 @@ Example [genotype file](files/genotypes.txt){:target="_blank"} contains data for
 
 `--chromosome <chrA> ... <chrN>` Analysis is restricted to chromosomes listed in the command line. Currently limited to autosomes Non-autosome chromosomes are designated by standard nomenclature: X, Y, XY, and MT.
 
-`--genomic_region <chrA> <bp startA> <bp_endB> … <chrN> <bp startN> <bp_endN>` Analysis is restricted to genomic regions specified by chromosome and bp window. Base pair values. –chromosome 4 would be the same as –genomic_region 4 0 5000000.
+`--genomic_region <chrA> <bp_startA> <bp_endA> … <chrN> <bp_startN> <bp_endN>` Analysis is restricted to genomic regions specified by chromosome and bp window. Base pair values. –chromosome 4 would be the same as –genomic_region 4 0 5000000.
 
 `--marker_set <text file>` Analysis is restricted to the set of markers in the marker file. MMAP searches the SNPNAME and RSNUM columns to match the markers listed. NO header in the file.
 
