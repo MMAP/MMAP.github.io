@@ -27,7 +27,7 @@ adjust the link definitions, and then copy/paste the desired commands.
 ### Soft Links
 
 ```
-mmap=/data/datasets/mmap/mmap			# path to mmap program
+mmap=/data4/datasets/mmap/mmap			# path to mmap program
 snps=marker_set.csv				# single column with list of markers (use SNPNAME's or RSNUM's)
 subjects=subject_set.csv			# single column with list of subject id's (EGO numbers)
 
