@@ -92,7 +92,7 @@ MMAP uses binary only files for genotype analysis. For genome-wide association a
   CHR	             1-22, X, Y, XY, MT
   POS	             position in base pairs
   STRAND	     +,- or blank
-  NON-CODED_ALLELE   homozygote has dosage 0
+  NON_CODED_ALLELE   homozygote has dosage 0
   EFFECT_ALLELE	     homozygote has dosage 2
 ```
 Only SNPNAME is required to be present, but default values of 0 for CHR and POS, ? for STRAND and 1 and 2 for the NON-CODED_ALLELE and EFFECT_ALLELE, respectively, will be entered if the tokens are not found. The file can contain any number of additional columns but must come before the list of individual IDs. These additional columns can be included in the genotype file and be used as filters or annotation by referencing the token in the header line in the appropriate command. Genotypes are stored in a variety of formats. Observed data is stored using 16 codes that represent phased and unphased states, partially typed states, and missing values. Thus, observed data is stored in a single byte. Imputed dosages can be stored as one or two bytes by scaling the value or as a double. One byte stores multiply the dosage by 100 so get 2 decimal place accuracy; two bytes multiplies by 10,000 so 4 place accuracy. If the original data is imputed dosage and not observed genotypes then the appropriate command line must be added to tell MMAP what data to expect. MMAP assumes comma-separated files (csv), but accepts space delimited also by adding `--genotype_space_delimiter` to the command line. MMAP accepts gzipped genotype files as input also. No additional command lines are necessary.
