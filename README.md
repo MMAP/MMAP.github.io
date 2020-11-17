@@ -245,7 +245,7 @@ MMAP imports Plink binary format files into an SxM or MxS genotype binary file, 
 the Plink format, which is automatically detected. Example below converts files \<prefix\>.bim,
 \<prefix\>.bed, \<prefix\>.fam into binary genotype file \<mmap prefix\>.bin and MMAP
 pedigree \<mmap prefix\>.ped.csv extracted from the \<prefix\>.fam.  
-`mmap --plink_bfile2mmap –plink_bfile <prefix> -- binary_output_prefix <mmap prefix>`
+`mmap --plink_bfile2mmap –plink_bfile <prefix> --binary_output_prefix <mmap prefix>`
 
 #### Mach/MiniMac
 
