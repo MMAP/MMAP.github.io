@@ -258,7 +258,7 @@ The covariate can be any item in the phenotype file or in a covariate file or a 
 This item does NOT have to be in the covariate list identified with `--covariates` (but typically would be)
 
 ```
---gxe_interaction TREATMENT`  (gives additional covariate: SNP*TREATMENT)
+--gxe_interaction TREATMENT   (gives additional covariate: SNP*TREATMENT)
 ```
 
 NOTE: There can be only one GxE term in the model. Typically, you would have TREATMENT in the list of
