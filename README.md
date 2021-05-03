@@ -833,8 +833,8 @@ of a manuscript.
 List of covariates included in the model.
 
 `--interactions <interaction terms>`  
-Interactions are coded using the '\*' delimiter. For example, AGE\*SEX models the interaction
-between the covariates AGE and SEX and AGE\*SEX\*BMI the 3-way interaction between
+Interactions are coded using the '\*' delimiter. For example, `--interactions AGE*SEX` models the interaction
+between the covariates AGE and SEX and `--interactions AGE*SEX*BMI` the 3-way interaction between
 AGE,SEX, and BMI. Interaction covariates do not need to be modeled as main effects nor 2-
 way interactions in the case of the 3-way interaction, though it is standard to include the
 combinatorial possibilities.
@@ -843,7 +843,7 @@ combinatorial possibilities.
 
 `--gxe_interaction <covariate>`  
 Run a Gx\<covariate> GWA, where G is determined from the model options and genotype file.
-This option currently requires that `<covariate>` is also listed in the `–covariate` option. The output
+This option currently requires that `<covariate>` is also listed in the `–-covariate` option. The output
 will include the GxE beta, standard error, p-value and covariance between the G beta and E
 beta. This option requires the option `--binary_covariate_filename <file>` where `<file>` is an
 MxS binary genotype file.
