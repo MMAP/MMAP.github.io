@@ -833,8 +833,8 @@ of a manuscript.
 List of covariates included in the model.
 
 `--interactions <interaction terms>`  
-Interactions are coded using the ‘*’ delimiter. For example, AGE*SEX models the interaction
-between the covariates AGE and SEX and AGE*SEX*BMI the 3-way interaction between
+Interactions are coded using the ‘&ast;’ delimiter. For example, AGE&ast;SEX models the interaction
+between the covariates AGE and SEX and AGE&ast;SEX&ast;BMI the 3-way interaction between
 AGE,SEX, and BMI. Interaction covariates do not need to be modeled as main effects nor 2-
 way interactions in the case of the 3-way interaction, though it is standard to include the
 combinatorial possibilities.
